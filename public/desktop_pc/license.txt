@@ -1,11 +1,11 @@
 Model Information:
-* title:	Gaming Desktop PC
-* source:	https://sketchfab.com/3d-models/gaming-desktop-pc-d1d8282c9916438091f11aeb28787b66
-* author:	Yolala1232 (https://sketchfab.com/Yolala1232)
+* title:	Imperial AT-AT Walker (old version) - Star Wars
+* source:	https://sketchfab.com/3d-models/imperial-at-at-walker-old-version-star-wars-60dad6a198fc4351990c1112df46e180
+* author:	Quiznos323 (https://sketchfab.com/quiznos323)
 
 Model License:
-* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-* requirements:	Author must be credited. Commercial use is allowed.
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Gaming Desktop PC" (https://sketchfab.com/3d-models/gaming-desktop-pc-d1d8282c9916438091f11aeb28787b66) by Yolala1232 (https://sketchfab.com/Yolala1232) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Imperial AT-AT Walker (old version) - Star Wars" (https://sketchfab.com/3d-models/imperial-at-at-walker-old-version-star-wars-60dad6a198fc4351990c1112df46e180) by Quiznos323 (https://sketchfab.com/quiznos323) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

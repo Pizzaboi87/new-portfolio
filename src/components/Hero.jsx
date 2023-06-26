@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="md:w-[80%] md:h-full md:mt-12 right-0 mt-28 w-full h-[80%] absolute">
         <AtAtCanvas />
       </div>
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="absolute xs:bottom-10 bottom-32 w-full pr-6 flex justify-end items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2">
             <motion.div 

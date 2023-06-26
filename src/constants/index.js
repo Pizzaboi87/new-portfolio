@@ -42,22 +42,22 @@ export const navLinks = [
 
 const services = [
   {
-    title: 'Web Developer',
+    title: 'React Development',
     icon: web,
-    image: 'cards/PW-87-react-development.png',
+    image: 'cards/PW87-react-development.png',
   },
   {
-    title: 'React Native Developer',
+    title: 'Creativity',
     icon: mobile,
     image: 'cards/PW87-creativity.png',
   },
   {
-    title: 'Backend Developer',
+    title: 'FERN Stack',
     icon: backend,
     image: 'cards/PW87-fern-stack.png',
   },
   {
-    title: 'Content Creator',
+    title: 'Logical Thinking',
     icon: creator,
     image: 'cards/PW87-logical-thinking.png',
   },

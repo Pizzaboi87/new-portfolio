@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import CanvasLoader from "../Loader";
+import Loader from "../Loader";
 import * as THREE from "three";
 
 const AtAt = () => {
@@ -52,7 +52,7 @@ const AtAtCanvas = () => {
       camera={{ position: [10, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={<Loader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}

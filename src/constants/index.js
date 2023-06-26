@@ -44,18 +44,22 @@ const services = [
   {
     title: 'Web Developer',
     icon: web,
+    image: 'cards/PW-87-react-development.png',
   },
   {
     title: 'React Native Developer',
     icon: mobile,
+    image: 'cards/PW87-creativity.png',
   },
   {
     title: 'Backend Developer',
     icon: backend,
+    image: 'cards/PW87-fern-stack.png',
   },
   {
     title: 'Content Creator',
     icon: creator,
+    image: 'cards/PW87-logical-thinking.png',
   },
 ];
 

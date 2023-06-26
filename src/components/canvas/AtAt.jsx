@@ -5,7 +5,7 @@ import CanvasLoader from "../Loader";
 import * as THREE from "three";
 
 const AtAt = () => {
-  const { scene, animations } = useGLTF("./desktop_pc/scene.gltf");
+  const { scene, animations } = useGLTF("./atat/scene.gltf");
   const [mixer] = useState(() => new THREE.AnimationMixer(scene));
 
   useEffect(() => {

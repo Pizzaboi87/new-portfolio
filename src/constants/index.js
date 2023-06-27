@@ -104,7 +104,8 @@ const technologies = [
   {
     name: "Bootstrap",
     icon: bootstrap,
-  },{
+  },
+  {
     name: "C#",
     icon: csharp,
   },
@@ -125,20 +126,8 @@ const technologies = [
     icon: firebase,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "Git",
     icon: git,
-  },
-  {
-    name: "Figma",
-    icon: figma,
-  },
-  {
-    name: "MySQL",
-    icon: mysql,
   },
 ];
 
@@ -149,7 +138,7 @@ const education = [
     icon: szte,
     iconBg: "#ff8d00",
     date: "2023 -",
-    points: ["Szeged, Hungary"]
+    points: ["Szeged, Hungary"],
   },
   {
     title: "Actor MA.",
@@ -157,7 +146,7 @@ const education = [
     icon: ke,
     iconBg: "#ff8d00",
     date: "2008 - 2013",
-    points: ["Kaposvar, Hungary"]
+    points: ["Kaposvar, Hungary"],
   },
   {
     title: "Tourism and Catering BSc.",
@@ -165,9 +154,9 @@ const education = [
     icon: krf,
     iconBg: "#ff8d00",
     date: "2006 - 2007",
-    points: ["Gyongyos, Hungary"]
+    points: ["Gyongyos, Hungary"],
   },
-]
+];
 
 const experiences = [
   {
@@ -317,4 +306,11 @@ const projects = [
   },
 ];
 
-export { services, technologies, education, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  education,
+  experiences,
+  testimonials,
+  projects,
+};

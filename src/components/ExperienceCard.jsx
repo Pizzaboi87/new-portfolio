@@ -3,7 +3,10 @@ import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceCard = ({ experience, experienceSection }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#1d1836", color: "#ffffff" }}
+    contentStyle={{
+      background: "#1d1836",
+      color: "#ffffff",
+    }}
     contentArrowStyle={{ borderRight: "7px solid #ff8d00" }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
@@ -26,16 +29,18 @@ const ExperienceCard = ({ experience, experienceSection }) => (
         {experience.company_name}
       </p>
     </div>
-    {experienceSection && <ul className="mt-5 list-disc ml-5 space-y-2">
-      {experience.points.map((point, index) => (
-        <li
-          key={`experience-point-${index}`}
-          className="text-white-100 text-[14px] pl-1 tracking-wider"
-        >
-          {point}
-        </li>
-      ))}
-    </ul>}
+    {experienceSection && (
+      <ul className="mt-5 list-disc ml-5 space-y-2">
+        {experience.points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className="text-white-100 text-[14px] pl-1 tracking-wider"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+    )}
   </VerticalTimelineElement>
 );
 

@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, AtAtCanvas, StarsCanvas } from "./canvas";
+import { EarthCanvas, AtAtCanvas, StarsCanvas } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -22,7 +22,6 @@ export {
   Feedbacks,
   Contact,
   EarthCanvas,
-  BallCanvas,
   AtAtCanvas,
   StarsCanvas,
 };

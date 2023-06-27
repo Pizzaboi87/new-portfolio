@@ -129,6 +129,10 @@ const technologies = [
     name: "Git",
     icon: git,
   },
+  {
+    name: "Figma",
+    icon: figma,
+  },
 ];
 
 const education = [

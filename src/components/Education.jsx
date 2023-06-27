@@ -12,12 +12,18 @@ const Education = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>where have I studied so far?</p>
-        <h2 className={`${styles.sectionHeadText} text-orange`}>Education</h2>
+        <h2 className={`${styles.sectionHeadText}`}>
+          <span className="text-orange">Academic </span>History
+        </h2>
       </motion.div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#ffffff">
           {education.map((educationPlace, index) => (
-            <ExperienceCard key={index} experience={educationPlace} experienceSection={false} />
+            <ExperienceCard
+              key={index}
+              experience={educationPlace}
+              experienceSection={false}
+            />
           ))}
         </VerticalTimeline>
       </div>

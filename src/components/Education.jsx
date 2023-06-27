@@ -17,7 +17,7 @@ const Education = () => {
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#ffffff">
           {education.map((educationPlace, index) => (
-            <ExperienceCard key={index} experience={educationPlace} />
+            <ExperienceCard key={index} experience={educationPlace} experienceSection={false} />
           ))}
         </VerticalTimeline>
       </div>

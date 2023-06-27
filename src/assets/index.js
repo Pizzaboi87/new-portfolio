@@ -26,6 +26,10 @@ import graphker from "./company/graphker.png";
 import phantom from "./company/phantom.png";
 import teleperformance from "./company/teleperformance.png";
 
+import krf from "./education/krf.png";
+import ke from "./education/ke.png";
+import szte from "./education/szte.png";
+
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -56,6 +60,9 @@ export {
   graphker,
   phantom,
   teleperformance,
+  krf,
+  ke,
+  szte,
   carrent,
   jobit,
   tripguide,

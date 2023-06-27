@@ -19,6 +19,9 @@ import {
   graphker,
   phantom,
   teleperformance,
+  krf,
+  ke,
+  szte,
   carrent,
   jobit,
   tripguide,
@@ -122,7 +125,7 @@ const education = [
   {
     title: "Computer Science BSc.",
     company_name: "University of Szeged",
-    icon: teleperformance,
+    icon: szte,
     iconBg: "#ff8d00",
     date: "2023 -",
     points: ["Szeged, Hungary"]
@@ -130,7 +133,7 @@ const education = [
   {
     title: "Actor MA.",
     company_name: "University of Kaposvar",
-    icon: teleperformance,
+    icon: ke,
     iconBg: "#ff8d00",
     date: "2008 - 2013",
     points: ["Kaposvar, Hungary"]
@@ -138,7 +141,7 @@ const education = [
   {
     title: "Tourism and Catering BSc.",
     company_name: "Robert Karoly College",
-    icon: teleperformance,
+    icon: krf,
     iconBg: "#ff8d00",
     date: "2006 - 2007",
     points: ["Gyongyos, Hungary"]

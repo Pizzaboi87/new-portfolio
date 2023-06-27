@@ -1,7 +1,7 @@
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-const ExperienceCard = ({ experience }) => (
+const ExperienceCard = ({ experience, experienceSection }) => (
   <VerticalTimelineElement
     contentStyle={{ background: "#1d1836", color: "#ffffff" }}
     contentArrowStyle={{ borderRight: "7px solid #ff8d00" }}
@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience }) => (
         {experience.company_name}
       </p>
     </div>
-    <ul className="mt-5 list-disc ml-5 space-y-2">
+    {experienceSection && <ul className="mt-5 list-disc ml-5 space-y-2">
       {experience.points.map((point, index) => (
         <li
           key={`experience-point-${index}`}
@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience }) => (
           {point}
         </li>
       ))}
-    </ul>
+    </ul>}
   </VerticalTimelineElement>
 );
 

@@ -118,6 +118,33 @@ const technologies = [
   },
 ];
 
+const education = [
+  {
+    title: "Computer Science BSc.",
+    company_name: "University of Szeged",
+    icon: teleperformance,
+    iconBg: "#ff8d00",
+    date: "2023 -",
+    points: ["Szeged, Hungary"]
+  },
+  {
+    title: "Actor MA.",
+    company_name: "University of Kaposvar",
+    icon: teleperformance,
+    iconBg: "#ff8d00",
+    date: "2008 - 2013",
+    points: ["Kaposvar, Hungary"]
+  },
+  {
+    title: "Tourism and Catering BSc.",
+    company_name: "Robert Karoly College",
+    icon: teleperformance,
+    iconBg: "#ff8d00",
+    date: "2006 - 2007",
+    points: ["Gyongyos, Hungary"]
+  },
+]
+
 const experiences = [
   {
     title: "Customer Service Representative",
@@ -266,4 +293,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, education, experiences, testimonials, projects };

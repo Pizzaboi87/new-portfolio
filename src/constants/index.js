@@ -15,6 +15,12 @@ import {
   git,
   figma,
   docker,
+  bootstrap,
+  csharp,
+  firebase,
+  mysql,
+  next,
+  unity,
   alegria,
   graphker,
   phantom,
@@ -68,11 +74,11 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
+    name: "HTML",
     icon: html,
   },
   {
-    name: "CSS 3",
+    name: "CSS",
     icon: css,
   },
   {
@@ -84,15 +90,30 @@ const technologies = [
     icon: typescript,
   },
   {
-    name: "React JS",
+    name: "React",
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
+    name: "Redux",
     icon: redux,
   },
   {
-    name: "Tailwind CSS",
+    name: "Next JS",
+    icon: next,
+  },
+  {
+    name: "Bootstrap",
+    icon: bootstrap,
+  },{
+    name: "C#",
+    icon: csharp,
+  },
+  {
+    name: "Unity",
+    icon: unity,
+  },
+  {
+    name: "Tailwind",
     icon: tailwind,
   },
   {
@@ -100,24 +121,24 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "Firebase",
+    icon: firebase,
   },
   {
     name: "Three JS",
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "figma",
+    name: "Figma",
     icon: figma,
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "MySQL",
+    icon: mysql,
   },
 ];
 

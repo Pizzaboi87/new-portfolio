@@ -20,6 +20,12 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import bootstrap from "./tech/bootstrap.png";
+import csharp from "./tech/csharp.png";
+import firebase from "./tech/firebase.png";
+import mysql from "./tech/mysql.png";
+import next from "./tech/next.png";
+import unity from "./tech/unity.png";
 
 import alegria from "./company/alegria.png";
 import graphker from "./company/graphker.png";
@@ -56,6 +62,12 @@ export {
   tailwind,
   typescript,
   threejs,
+  bootstrap,
+  csharp,
+  firebase,
+  mysql,
+  next,
+  unity,
   alegria,
   graphker,
   phantom,

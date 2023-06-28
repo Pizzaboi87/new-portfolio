@@ -1,8 +1,4 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -11,14 +7,11 @@ import {
   redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
   figma,
-  docker,
   bootstrap,
   csharp,
   firebase,
-  mysql,
   next,
   unity,
   alegria,
@@ -28,10 +21,6 @@ import {
   krf,
   ke,
   szte,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
 } from "../assets";
 
 export const navLinks = [
@@ -53,22 +42,22 @@ const services = [
   {
     title: "React Development",
     icon: web,
-    image: "cards/PW87-react-development.png",
+    image: "cards/PW87-react-development.webp",
   },
   {
     title: "Creativity",
     icon: mobile,
-    image: "cards/PW87-creativity.png",
+    image: "cards/PW87-creativity.webp",
   },
   {
     title: "FERN Stack",
     icon: backend,
-    image: "cards/PW87-fern-stack.png",
+    image: "cards/PW87-fern-stack.webp",
   },
   {
     title: "Logical Thinking",
     icon: creator,
-    image: "cards/PW87-logical-thinking.png",
+    image: "cards/PW87-logical-thinking.webp",
   },
 ];
 
@@ -263,7 +252,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: javascript,
     source_code_link: "https://github.com/",
   },
   {
@@ -284,7 +273,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: javascript,
     source_code_link: "https://github.com/",
   },
   {
@@ -305,7 +294,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: javascript,
     source_code_link: "https://github.com/",
   },
 ];

@@ -1,71 +1,50 @@
 import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
-import bootstrap from "./tech/bootstrap.png";
-import csharp from "./tech/csharp.png";
-import firebase from "./tech/firebase.png";
-import mysql from "./tech/mysql.png";
-import next from "./tech/next.png";
-import unity from "./tech/unity.png";
+import css from "./tech/css.webp";
+import figma from "./tech/figma.webp";
+import git from "./tech/git.webp";
+import html from "./tech/html.webp";
+import javascript from "./tech/javascript.webp";
+import nodejs from "./tech/nodejs.webp";
+import reactjs from "./tech/reactjs.webp";
+import redux from "./tech/redux.webp";
+import tailwind from "./tech/tailwind.webp";
+import typescript from "./tech/typescript.webp";
+import bootstrap from "./tech/bootstrap.webp";
+import csharp from "./tech/csharp.webp";
+import firebase from "./tech/firebase.webp";
+import next from "./tech/next.webp";
+import unity from "./tech/unity.webp";
 
-import alegria from "./company/alegria.png";
-import graphker from "./company/graphker.png";
-import phantom from "./company/phantom.png";
-import teleperformance from "./company/teleperformance.png";
+import alegria from "./company/alegria.webp";
+import graphker from "./company/graphker.webp";
+import phantom from "./company/phantom.webp";
+import teleperformance from "./company/teleperformance.webp";
 
-import krf from "./education/krf.png";
-import ke from "./education/ke.png";
-import szte from "./education/szte.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import krf from "./education/krf.webp";
+import ke from "./education/ke.webp";
+import szte from "./education/szte.webp";
 
 export {
   logo,
-  backend,
-  creator,
-  mobile,
-  web,
-  github,
   menu,
   close,
+
   css,
-  docker,
   figma,
   git,
   html,
   javascript,
-  mongodb,
   nodejs,
   reactjs,
   redux,
   tailwind,
   typescript,
-  threejs,
   bootstrap,
   csharp,
   firebase,
-  mysql,
   next,
   unity,
   alegria,
@@ -75,7 +54,4 @@ export {
   krf,
   ke,
   szte,
-  carrent,
-  jobit,
-  tripguide,
 };

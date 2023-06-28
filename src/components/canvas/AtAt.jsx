@@ -26,14 +26,14 @@ const AtAt = () => {
     <mesh>
       <hemisphereLight intensity={0.2} groundColor="black" />
       <pointLight intensity={1} />
-      <spotLight
+      {/*<spotLight
         position={[-15, 100, 10]}
         angle={0.2}
         penumbra={1}
         intensity={0.5}
         castShadow
         shadow-mapSize={1024}
-      />
+      />*/}
       <primitive
         object={scene}
         scale={0.12}
@@ -47,7 +47,6 @@ const AtAt = () => {
 const AtAtCanvas = () => {
   return (
     <Canvas
-      frameloop="always"
       shadows
       camera={{ position: [10, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}

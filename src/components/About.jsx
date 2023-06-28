@@ -18,7 +18,7 @@ const ServiceCard = ({ index, title, image }) => {
     <Tilt className="md:w-[270px] w-full mx-auto">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full yellow-purple-gradient p-[1px] shadow-card"
+        className="w-full yellow-purple-gradient p-[1px]"
         ref={card}
         onClick={() => zoom(card)}
       >

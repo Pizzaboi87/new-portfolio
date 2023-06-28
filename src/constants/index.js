@@ -41,22 +41,18 @@ export const navLinks = [
 const services = [
   {
     title: "React Development",
-    icon: web,
     image: "cards/PW87-react-development.webp",
   },
   {
     title: "Creativity",
-    icon: mobile,
     image: "cards/PW87-creativity.webp",
   },
   {
     title: "FERN Stack",
-    icon: backend,
     image: "cards/PW87-fern-stack.webp",
   },
   {
     title: "Logical Thinking",
-    icon: creator,
     image: "cards/PW87-logical-thinking.webp",
   },
 ];

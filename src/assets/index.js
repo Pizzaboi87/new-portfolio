@@ -31,7 +31,6 @@ export {
   logo,
   menu,
   close,
-
   css,
   figma,
   git,

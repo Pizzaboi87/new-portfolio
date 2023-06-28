@@ -224,3 +224,59 @@
 .animate {
   animation: scroll 20s linear infinite;
 }
+
+:root {
+  --total-brand: 18;
+  --logo-width: 12rem;
+  --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
+}
+
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider::before,
+.slider::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: var(--logo-width);
+}
+
+.slider::before {
+  left: 0;
+  z-index: 10;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.slider::after {
+  right: 0;
+  z-index: 10;
+  background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+.slider ul.brands {
+  list-style: none;
+  width: var(--total-logo-width);
+  display: flex;
+  animation: slideLeft 14s linear infinite;
+}
+
+@keyframes slideLeft {
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+ul.brands li.brand-logo {
+  width: var(--logo-width);
+  font-size: 4rem;
+  text-align: center;
+  margin-left: 3rem;
+}

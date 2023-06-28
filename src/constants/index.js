@@ -57,6 +57,27 @@ const services = [
   },
 ];
 
+const techLogos = [
+  "logos:firebase",
+  "logos:html-5",
+  "logos:css-3",
+  "logos:javascript",
+  "devicon:typescript",
+  "logos:react",
+  "skill-icons:git",
+  "logos:figma",
+  "logos:bootstrap",
+  "logos:c-sharp",
+  "logos:unity",
+  "logos:nextjs-icon",
+  "logos:nodejs-icon",
+  "logos:node-sass",
+  "logos:redux",
+  "logos:tailwindcss-icon",
+  "logos:mysql-icon",
+  "logos:expo-icon",
+];
+
 const technologies = [
   {
     name: "HTML",
@@ -302,4 +323,5 @@ export {
   experiences,
   testimonials,
   projects,
+  techLogos,
 };

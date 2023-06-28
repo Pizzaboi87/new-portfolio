@@ -1,19 +1,4 @@
 import {
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  git,
-  figma,
-  bootstrap,
-  csharp,
-  firebase,
-  next,
-  unity,
   alegria,
   graphker,
   phantom,
@@ -76,69 +61,6 @@ const techLogos = [
   "logos:tailwindcss-icon",
   "logos:mysql-icon",
   "logos:expo-icon",
-];
-
-const technologies = [
-  {
-    name: "HTML",
-    icon: html,
-  },
-  {
-    name: "CSS",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React",
-    icon: reactjs,
-  },
-  {
-    name: "Redux",
-    icon: redux,
-  },
-  {
-    name: "Next JS",
-    icon: next,
-  },
-  {
-    name: "Bootstrap",
-    icon: bootstrap,
-  },
-  {
-    name: "C#",
-    icon: csharp,
-  },
-  {
-    name: "Unity",
-    icon: unity,
-  },
-  {
-    name: "Tailwind",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "Firebase",
-    icon: firebase,
-  },
-  {
-    name: "Git",
-    icon: git,
-  },
-  {
-    name: "Figma",
-    icon: figma,
-  },
 ];
 
 const education = [
@@ -269,7 +191,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: javascript,
+    image: alegria,
     source_code_link: "https://github.com/",
   },
   {
@@ -290,7 +212,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: javascript,
+    image: alegria,
     source_code_link: "https://github.com/",
   },
   {
@@ -311,17 +233,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: javascript,
+    image: alegria,
     source_code_link: "https://github.com/",
   },
 ];
 
-export {
-  services,
-  technologies,
-  education,
-  experiences,
-  testimonials,
-  projects,
-  techLogos,
-};
+export { services, education, experiences, testimonials, projects, techLogos };

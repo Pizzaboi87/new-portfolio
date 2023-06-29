@@ -1,5 +1,4 @@
-import EarthCanvas from "./Earth";
 import AtAtCanvas from "./AtAt";
-import StarsCanvas from "./Stars";
+import BB8Canvas from "./BB8";
 
-export { EarthCanvas, AtAtCanvas, StarsCanvas };
+export { AtAtCanvas, BB8Canvas };

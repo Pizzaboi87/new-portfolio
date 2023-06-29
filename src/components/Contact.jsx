@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
+import { BB8Canvas } from "./canvas";
 
 const Contact = () => {
-  return (
-    <div>Contact</div>
-  )
-}
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
-export default Contact
+  return (
+    <section className="grid">
+      <div className="w-full h-[100vh]" ref={ref}>
+        {isInView && <BB8Canvas />}
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

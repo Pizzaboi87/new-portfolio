@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import Tilt from 'react-parallax-tilt';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { services } from '../constants';
@@ -28,6 +28,7 @@ const ServiceCard = ({ index, title, image }) => {
 
   return (
     <Tilt
+      className="topZ"
       max={25}
       scale={smallView ? 1 : 2}
       speed={450}
@@ -68,7 +69,7 @@ const About = () => {
         feedback and collaborate with others.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-6">
+      <div className="mt-20 flex flex-wrap gap-6 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

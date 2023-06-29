@@ -9,6 +9,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-screen mx-auto grid">
+      <div className="top-0 w-full h-[320px] absolute z-10"></div>
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
@@ -29,13 +30,11 @@ const Hero = () => {
 
       <div
         ref={ref}
-        className="md:w-[80%] justify-self-end md:h-full md:mt-12 right-0 mt-28 w-full h-[80%] relative overflow-hidden"
+        className="justify-self-end md:h-full md:mt-12 right-0 mt-28 w-full h-[80%] relative overflow-hidden"
       >
-        <div className="overflow-auto relative w-full h-full">
-          {isInView && <AtAtCanvas />}
-        </div>
+        {isInView && <AtAtCanvas />}
       </div>
-      <div className="absolute xs:bottom-10 bottom-32 w-full pr-6 flex justify-end items-center">
+      <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2">
             <motion.div

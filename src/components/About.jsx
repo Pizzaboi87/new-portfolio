@@ -1,37 +1,45 @@
-import React, { useRef } from "react";
-import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { services } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
-import { SectionWrapper } from "../hoc";
+import { useEffect, useState } from 'react';
+import Tilt from 'react-parallax-tilt';
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { services } from '../constants';
+import { fadeIn, textVariant } from '../utils/motion';
+import { SectionWrapper } from '../hoc';
 
 const ServiceCard = ({ index, title, image }) => {
-  const card = useRef(null);
+  const [smallView, setSmallView] = useState(false);
 
-  const zoom = (card) => {
-    if (window.innerWidth < 1080) return;
-    else card.current.classList.toggle("zoom");
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.matchMedia('(max-width: 1080px)').matches) {
+        setSmallView(true);
+      } else {
+        setSmallView(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
-    <Tilt className="md:w-[270px] w-full mx-auto">
+    <Tilt
+      max={25}
+      scale={smallView ? 1 : 2}
+      speed={450}
+      glareEnable
+      glarePosition="top"
+      glareColor="#ffffff"
+    >
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full yellow-purple-gradient p-[1px]"
-        ref={card}
-        onClick={() => zoom(card)}
+        variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
+        className="md:w-[270px] w-full mx-auto"
       >
-        <div
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className="bg-tertiary min-h-[280px] flex justify-evenly items-center flex-col"
-        >
-          <img src={image} alt={title} className="object-contain" />
-        </div>
+        <img src={image} alt={title} className="object-contain" />
       </motion.div>
     </Tilt>
   );
@@ -47,7 +55,7 @@ const About = () => {
         </h2>
       </motion.div>
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
       >
         I am a self-taught front-end developer with growing experience in React
@@ -69,4 +77,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, 'about');

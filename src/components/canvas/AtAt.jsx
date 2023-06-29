@@ -1,8 +1,8 @@
-import Loader from "../Loader";
-import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload } from "@react-three/drei";
-import { Model } from "./AtAtScene";
+import Loader from '../Loader';
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Preload } from '@react-three/drei';
+import { Model } from './AtAtScene';
 
 const AtAtCanvas = () => {
   return (
@@ -21,6 +21,7 @@ const AtAtCanvas = () => {
       />
       <Suspense fallback={<Loader />}>
         <OrbitControls
+          autoRotate
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}

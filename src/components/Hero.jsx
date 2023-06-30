@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
-import { CanvasWrapper, AtAt } from "./canvas";
+import { CanvasWrapper, AtAtModel } from "./canvas";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -34,7 +34,7 @@ const Hero = () => {
       >
         {isInView && (
           <CanvasWrapper rotate={true}>
-            <AtAt />
+            <AtAtModel />
           </CanvasWrapper>
         )}
       </div>

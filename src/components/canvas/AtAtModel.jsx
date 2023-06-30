@@ -12,7 +12,7 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 
-export function Model(props) {
+const AtAtModel = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
     "/atat/scene-transformed.glb"
@@ -161,3 +161,5 @@ export function Model(props) {
 }
 
 useGLTF.preload("/atat/scene-transformed.glb");
+
+export default AtAtModel;

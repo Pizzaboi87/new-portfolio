@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
-import { CanvasWrapper, BB8 } from "./canvas";
+import { CanvasWrapper, BB8Model } from "./canvas";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -11,7 +11,7 @@ const Contact = () => {
       <div className="w-full h-[100vh]" ref={ref}>
         {isInView && (
           <CanvasWrapper rotate={false}>
-            <BB8 />
+            <BB8Model />
           </CanvasWrapper>
         )}
       </div>

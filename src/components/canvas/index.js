@@ -1,4 +1,4 @@
-import AtAtModel from "AtAtModel";
+import AtAtModel from "./AtAtModel";
 import BB8Model from "./BB8Model";
 import CanvasWrapper from "./CanvasWrapper";
 

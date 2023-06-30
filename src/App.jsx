@@ -4,11 +4,10 @@ import {
   Contact,
   Education,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
   Tech,
-  Works,
+  Portfolio,
 } from './components';
 
 const App = () => {
@@ -23,8 +22,7 @@ const App = () => {
         <Experience />
         <Education />
         <Tech />
-        <Works />
-        <Feedbacks />
+        <Portfolio />
         <Contact />
       </div>
     </BrowserRouter>

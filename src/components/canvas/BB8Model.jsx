@@ -45,7 +45,6 @@ const BB8Model = (props) => {
     }
   }, [actions]);
 
-  console.log(actions);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

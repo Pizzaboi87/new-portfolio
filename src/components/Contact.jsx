@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
-import { BB8Canvas } from "./canvas";
+import { CanvasWrapper, BB8 } from "./canvas";
 
 const Contact = () => {
   const ref = useRef(null);

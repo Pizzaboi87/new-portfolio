@@ -45,8 +45,8 @@
 
 .yellow-purple-gradient {
   background: '#00cea8';
-  background: linear-gradient(90.13deg, #ff8d00 1.9%, #1c002f 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #ff8d00 1.9%, #1c002f 97.5%);
+  background: linear-gradient(90.13deg, #ff8d00 1.9%, #350158 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #ff8d00 1.9%, #350158 97.5%);
 }
 
 .orange-text-gradient {

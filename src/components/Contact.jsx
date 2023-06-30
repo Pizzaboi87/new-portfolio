@@ -9,7 +9,11 @@ const Contact = () => {
   return (
     <section className="grid">
       <div className="w-full h-[100vh]" ref={ref}>
-        {isInView && <BB8Canvas />}
+        {isInView && (
+          <CanvasWrapper rotate={false}>
+            <BB8 />
+          </CanvasWrapper>
+        )}
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { styles } from '../styles';
-import { AtAtCanvas } from './canvas';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { styles } from "../styles";
+import { CanvasWrapper, AtAt } from "./canvas";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -32,7 +32,11 @@ const Hero = () => {
         ref={ref}
         className="justify-self-end md:h-full md:mt-12 right-0 mt-28 w-full h-[80%] relative overflow-hidden"
       >
-        {isInView && <AtAtCanvas />}
+        {isInView && (
+          <CanvasWrapper rotate={true}>
+            <AtAt />
+          </CanvasWrapper>
+        )}
       </div>
       <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
         <a href="#about">
@@ -44,7 +48,7 @@ const Hero = () => {
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
-                repeatType: 'loop',
+                repeatType: "loop",
               }}
               className="w-3 h-3 rounded-full bg-orange mb-1"
             />

@@ -7,14 +7,14 @@ Source: https://sketchfab.com/3d-models/bb8-animated-15db7644c5b645f195f4d2dc0c5
 Title: BB8 (Animated)
 */
 
-import React, { useRef, useState, useEffect } from "react";
-import { useFrame } from "@react-three/fiber";
-import { useGLTF, useAnimations } from "@react-three/drei";
-import * as THREE from "three";
+import React, { useRef, useState, useEffect } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { useGLTF, useAnimations } from '@react-three/drei';
+import * as THREE from 'three';
 
 const BB8Model = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/bb8/bb8.glb");
+  const { nodes, materials, animations } = useGLTF('/bb8/bb8.glb');
   const { actions } = useAnimations(animations, group);
 
   const [mixer] = useState(() => new THREE.AnimationMixer(null));
@@ -51,8 +51,8 @@ const BB8Model = (props) => {
       <group name="Sketchfab_Scene">
         <group
           name="BB8Center_NeutralPose"
-          position={[0, 0.172, 0]}
-          scale={0.01}
+          position={[0, -1, 0]}
+          scale={props.smallView ? 0.025 : 0.015}
         >
           <group name="BB8Center">
             <group name="BB8BB8_Body">
@@ -73,8 +73,8 @@ const BB8Model = (props) => {
         </group>
         <group
           name="BB8Center_Head_NeutralPose"
-          position={[0, 0.172, 0]}
-          scale={0.01}
+          position={[0, -1, 0]}
+          scale={props.smallView ? 0.025 : 0.015}
         >
           <group name="BB8Center_Head">
             <group name="BB8Antena">
@@ -103,8 +103,8 @@ const BB8Model = (props) => {
       </group>
     </group>
   );
-}
+};
 
-useGLTF.preload("/bb8/bb8.glb");
+useGLTF.preload('/bb8/bb8.glb');
 
 export default BB8Model;

@@ -1,34 +1,54 @@
-import emailjs from "@emailjs/browser";
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { styles } from "../styles";
-import { CanvasWrapper, BB8Model } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import emailjs from '@emailjs/browser';
+import { useState, useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { styles } from '../styles';
+import { CanvasWrapper, BB8Model } from './canvas';
+import { SectionWrapper } from '../hoc';
+import { slideIn } from '../utils/motion';
 
 const Contact = () => {
   const formRef = useRef(null);
-  const ref = useRef(null);
-  const isInView = useInView(ref);
+  const canvasRef = useRef(null);
+  const isInView = useInView(canvasRef);
   const [loading, setLoading] = useState(false);
+  const [smallView, setSmallView] = useState(false);
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.matchMedia('(max-width: 1080px)').matches) {
+        setSmallView(true);
+      } else {
+        setSmallView(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleChange = (e) => {};
 
   const handleSubmit = (e) => {};
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        variants={slideIn('left', 'tween', 0.2, 1)}
+        className="flex-1 bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact</h3>
+        <h3 className={styles.sectionHeadText}>
+          <span className="text-orange">Contact </span>Me
+        </h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -46,7 +66,9 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email Address</span>
+            <span className="text-white font-medium mb-4">
+              Your Email Address
+            </span>
             <input
               type="email"
               name="email"
@@ -72,17 +94,18 @@ const Contact = () => {
             disabled={loading}
             className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? 'Sending...' : 'Send'}
           </button>
         </form>
       </motion.div>
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        ref={canvasRef}
+        variants={slideIn('right', 'tween', 0.2, 1)}
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[300px]"
       >
         {isInView && (
           <CanvasWrapper rotate={false}>
-            <BB8Model />
+            <BB8Model smallView={smallView} />
           </CanvasWrapper>
         )}
       </motion.div>
@@ -90,4 +113,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default SectionWrapper(Contact, 'contact');

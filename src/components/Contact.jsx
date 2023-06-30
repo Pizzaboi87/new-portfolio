@@ -35,9 +35,33 @@ const Contact = () => {
     };
   }, []);
 
-  const handleChange = (e) => {};
+  const valueCheck = (form) => {
+    const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
+    const messageRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
-  const handleSubmit = (e) => {};
+    if (!nameRegex.test(form.name)) {
+      alert('Please enter a valid name.');
+      setLoading(false);
+      return;
+    }
+
+    if (!messageRegex.test(form.message)) {
+      alert('Please enter a valid message.');
+      setLoading(false);
+      return;
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevForm) => ({ ...prevForm, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    valueCheck(form);
+  };
 
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
@@ -62,6 +86,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
+              required
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -75,6 +100,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email address?"
+              required
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -86,13 +112,16 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What would you like to say?"
+              required
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <button
             type="submit"
             disabled={loading}
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            className={`${
+              loading ? 'cursor-progress' : 'cursor-pointer'
+            } bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl`}
           >
             {loading ? 'Sending...' : 'Send'}
           </button>

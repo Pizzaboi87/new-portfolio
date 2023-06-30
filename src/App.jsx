@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 import {
   About,
   Contact,
@@ -9,7 +9,7 @@ import {
   Navbar,
   Tech,
   Works,
-} from "./components";
+} from './components';
 
 const App = () => {
   return (
@@ -25,9 +25,7 @@ const App = () => {
         <Tech />
         <Works />
         <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-        </div>
+        <Contact />
       </div>
     </BrowserRouter>
   );

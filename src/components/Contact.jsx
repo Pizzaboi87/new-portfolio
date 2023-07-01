@@ -1,10 +1,9 @@
-import emailjs from '@emailjs/browser';
-import { useState, useRef, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { styles } from '../styles';
-import { CanvasWrapper, BB8Model } from './canvas';
-import { SectionWrapper } from '../hoc';
-import { slideIn } from '../utils/motion';
+import emailjs from "@emailjs/browser";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "framer-motion";
+import { styles } from "../styles";
+import { CanvasWrapper, BB8Model } from "./canvas";
+import { SectionWrapper } from "../hoc";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -13,25 +12,25 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [smallView, setSmallView] = useState(false);
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.matchMedia('(max-width: 1080px)').matches) {
+      if (window.matchMedia("(max-width: 1080px)").matches) {
         setSmallView(true);
       } else {
         setSmallView(false);
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -40,13 +39,13 @@ const Contact = () => {
     const messageRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
     if (!nameRegex.test(form.name)) {
-      alert('Please enter a valid name.');
+      alert("Please enter a valid name.");
       setLoading(false);
       return;
     }
 
     if (!messageRegex.test(form.message)) {
-      alert('Please enter a valid message.');
+      alert("Please enter a valid message.");
       setLoading(false);
       return;
     }
@@ -65,10 +64,7 @@ const Contact = () => {
 
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
-      <motion.div
-        variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-1 bg-black-100 p-8 rounded-2xl"
-      >
+      <div className="flex-1 bg-black-100 p-8 rounded-2xl">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>
           <span className="text-orange">Contact </span>Me
@@ -120,16 +116,15 @@ const Contact = () => {
             type="submit"
             disabled={loading}
             className={`${
-              loading ? 'cursor-progress' : 'cursor-pointer'
+              loading ? "cursor-progress" : "cursor-pointer"
             } bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl`}
           >
-            {loading ? 'Sending...' : 'Send'}
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
-      </motion.div>
-      <motion.div
+      </div>
+      <div
         ref={canvasRef}
-        variants={slideIn('right', 'tween', 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[300px]"
       >
         {isInView && (
@@ -137,9 +132,9 @@ const Contact = () => {
             <BB8Model smallView={smallView} />
           </CanvasWrapper>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 };
 
-export default SectionWrapper(Contact, 'contact');
+export default SectionWrapper(Contact, "contact");

@@ -1,25 +1,27 @@
 import ExperienceCard from "./ExperienceCard";
-import { color, motion } from "framer-motion";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div>
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>
           <span className="text-orange">Work </span>Experience
         </h2>
-      </motion.div>
+      </div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#ffffff">
           {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} experienceSection={true} />
+            <ExperienceCard
+              key={index}
+              experience={experience}
+              experienceSection={true}
+            />
           ))}
         </VerticalTimeline>
       </div>

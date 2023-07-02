@@ -44,7 +44,7 @@ const DesktopProjectCard = ({
       <IconContainer icon="mdi:github" href={github} />
       <IconContainer icon="vaadin:eye" href={link} />
       {youTube && <IconContainer icon="openmoji:youtube" href={youTube} />}
-      <h1 className="glass title inline-block max-w-[20rem] m-0 text-right text-black text-3xl">
+      <h1 className="glass title inline-block max-w-[20rem] m-0 text-right font-bold text-orange text-3xl">
         {title}
       </h1>
       <p className="glass details inline-block text-black">{details}</p>

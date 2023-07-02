@@ -1,4 +1,5 @@
 import MobileProjectCard from "./MobileProjectCard";
+import DesktopProjectCard from "./DesktopProjectCard";
 import { useContext } from "react";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -11,6 +12,14 @@ const Portfolio = () => {
   const smallView = useContext(CheckSizeContext);
   const DynamicDiv = smallView ? "div" : motion.div;
   const DynamicP = smallView ? "p" : motion.p;
+
+  const mobile = projects.map((project, index) => (
+    <MobileProjectCard key={project.id} {...project} index={index} />
+  ));
+
+  const desktop = projects.map((project, index) => (
+    <DesktopProjectCard key={project.id} {...project} index={index} />
+  ));
 
   return (
     <section>
@@ -35,9 +44,7 @@ const Portfolio = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7 justify-center">
-        {projects.map((project, index) => (
-          <MobileProjectCard key={project.id} {...project} index={index} />
-        ))}
+        {smallView ? mobile : desktop}
       </div>
     </section>
   );

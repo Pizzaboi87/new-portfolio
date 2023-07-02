@@ -53,7 +53,7 @@ const Contact = () => {
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
       <DynamicDiv
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-1 bg-black-100 p-8 rounded-2xl"
+        className="flex-1 bg-tertiary p-8 rounded-2xl"
       >
         <DynamicDiv variants={textVariant(0)}>
           <p className={styles.sectionSubText}>Get in touch</p>
@@ -75,7 +75,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your name?"
               required
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-cardBg py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -89,7 +89,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your email address?"
               required
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-cardBg py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -101,7 +101,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What would you like to say?"
               required
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-cardBg py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <button
@@ -109,7 +109,7 @@ const Contact = () => {
             disabled={loading}
             className={`${
               loading ? "cursor-progress" : "cursor-pointer"
-            } bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl`}
+            } bg-cardBg py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl`}
           >
             {loading ? "Sending..." : "Send"}
           </button>

@@ -157,7 +157,7 @@ const projects = [
     link: "https://peterweiser.com/portfolio/pizzaboi.apk",
     github: "https://github.com/Pizzaboi87/react-native-food-order-app",
     cover: "/projects/food-order.webp",
-    youTube: "5uNL8vnNPj8",
+    youTube: "https://www.youtube.com/watch?v=5uNL8vnNPj8",
     details:
       "This project is a React Native food ordering app with Google login integration, powered by Firebase, Stripe payments, and featuring password reset, order history, address editing, and unique menu generated using Chat GPT. Tested on Android, the app aims to offer a functional, real-life experience in several cities around the world.",
   },
@@ -173,7 +173,7 @@ const projects = [
   },
   {
     id: "03",
-    title: "X-Wing Shooter Game",
+    title: "X-Wing Game",
     alt: "X-Wing Shooter",
     link: "https://weiser-x-wing.netlify.app",
     github: "https://github.com/Pizzaboi87/x-wing",
@@ -193,7 +193,7 @@ const projects = [
   },
   {
     id: "05",
-    title: "Industrial Automaton",
+    title: "Droid Factory",
     alt: "Industrial Automaton",
     link: "https://weiser-automatoncorp.netlify.app",
     github: "https://github.com/Pizzaboi87/industrial-automaton",
@@ -203,7 +203,7 @@ const projects = [
   },
   {
     id: "06",
-    title: "Quizzical Game - Scrimba",
+    title: "Quizzical Game",
     alt: "Quiz",
     link: "https://weiser-quiz.netlify.app",
     github: "https://github.com/Pizzaboi87/quizzical",

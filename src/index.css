@@ -217,3 +217,49 @@
 .topZ:hover {
   z-index: 999;
 }
+
+.box {
+  transform-style: preserve-3d;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+}
+
+.glass {
+  visibility: hidden;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+}
+
+.box:hover .glass {
+  visibility: visible;
+  transition: 0.5s ease-in-out;
+}
+
+.box:hover .github {
+  transform: translate3d(-10px, -10px, 100px);
+}
+
+.box:hover .youtube {
+  transform: translate3d(-30px, -20px, 100px);
+}
+
+.box:hover .link {
+  transform: translate3d(-60px, 80px, 100px);
+}
+
+.box:hover .title {
+  transform: translate3d(50px, -50px, 100px);
+}
+
+.box:hover .details {
+  transform: translate3d(80px, 0px, 100px);
+}

@@ -8,6 +8,7 @@ import ExperienceCard from "./ExperienceCard";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 import MobileProjectCard from "./MobileProjectCard";
+import DesktopProjectCard from "./DesktopProjectCard";
 
 export {
   Hero,
@@ -19,5 +20,6 @@ export {
   ExperienceCard,
   Portfolio,
   MobileProjectCard,
+  DesktopProjectCard,
   Contact,
 };

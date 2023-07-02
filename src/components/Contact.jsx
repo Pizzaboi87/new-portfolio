@@ -1,9 +1,10 @@
 import emailjs from "@emailjs/browser";
 import { useState, useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { styles } from "../styles";
 import { CanvasWrapper, BB8Model } from "./canvas";
 import { SectionWrapper } from "../hoc";
+import { textVariant, slideIn } from "../utils/motion";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -64,11 +65,16 @@ const Contact = () => {
 
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
-      <div className="flex-1 bg-black-100 p-8 rounded-2xl">
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>
-          <span className="text-orange">Contact </span>Me
-        </h3>
+      <motion.div
+        variants={slideIn("left", "tween", 0.2, 1)}
+        className="flex-1 bg-black-100 p-8 rounded-2xl"
+      >
+        <motion.div variants={textVariant(0)}>
+          <p className={styles.sectionSubText}>Get in touch</p>
+          <h3 className={styles.sectionHeadText}>
+            <span className="text-orange">Contact </span>Me
+          </h3>
+        </motion.div>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -122,7 +128,7 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
-      </div>
+      </motion.div>
       <div
         ref={canvasRef}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[300px]"

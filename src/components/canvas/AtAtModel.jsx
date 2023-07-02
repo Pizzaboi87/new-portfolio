@@ -39,8 +39,8 @@ const AtAtModel = (props) => {
       <group name="Sketchfab_Scene">
         <primitive
           object={nodes._rootJoint}
-          scale={0.12}
-          position={[0, -2, 0]}
+          scale={props.smallView ? 0.1 : 0.12}
+          position={props.smallView ? [0, -1.4, 0] : [0, -2, 0]}
           rotation={[-1.6, 0, 0]}
         />
         <skinnedMesh
@@ -158,7 +158,7 @@ const AtAtModel = (props) => {
       </group>
     </group>
   );
-}
+};
 
 useGLTF.preload("/atat/scene-transformed.glb");
 

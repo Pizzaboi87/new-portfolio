@@ -1,39 +1,25 @@
 import emailjs from "@emailjs/browser";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import { useInView, motion } from "framer-motion";
 import { styles } from "../styles";
 import { CanvasWrapper, BB8Model } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { textVariant, slideIn } from "../utils/motion";
+import { CheckSizeContext } from "../context/checkSize.context";
 
 const Contact = () => {
+  const smallView = useContext(CheckSizeContext);
+  const DynamicDiv = smallView ? "div" : motion.div;
+
   const formRef = useRef(null);
   const canvasRef = useRef(null);
   const isInView = useInView(canvasRef);
   const [loading, setLoading] = useState(false);
-  const [smallView, setSmallView] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.matchMedia("(max-width: 1080px)").matches) {
-        setSmallView(true);
-      } else {
-        setSmallView(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const valueCheck = (form) => {
     const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
@@ -65,16 +51,16 @@ const Contact = () => {
 
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
-      <motion.div
+      <DynamicDiv
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-1 bg-black-100 p-8 rounded-2xl"
       >
-        <motion.div variants={textVariant(0)}>
+        <DynamicDiv variants={textVariant(0)}>
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>
             <span className="text-orange">Contact </span>Me
           </h3>
-        </motion.div>
+        </DynamicDiv>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -128,7 +114,7 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
-      </motion.div>
+      </DynamicDiv>
       <div
         ref={canvasRef}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[300px]"

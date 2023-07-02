@@ -1,9 +1,11 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
 import { CanvasWrapper, AtAtModel } from "./canvas";
+import { CheckSizeContext } from "../context/checkSize.context";
 
 const Hero = () => {
+  const smallView = useContext(CheckSizeContext);
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -34,11 +36,15 @@ const Hero = () => {
       >
         {isInView && (
           <CanvasWrapper rotate={true}>
-            <AtAtModel />
+            <AtAtModel smallView={smallView} />
           </CanvasWrapper>
         )}
       </div>
-      <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
+      <div
+        className={`absolute flex items-center justify-center bottom-0 ${
+          smallView ? "w-full pb-8" : "w-10 right-8"
+        }`}
+      >
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2">
             <motion.div

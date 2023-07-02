@@ -10,7 +10,7 @@ const CanvasWrapper = ({ children, rotate }) => {
       camera={{ position: [10, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <ambientLight intensity={0.25} />
+      <ambientLight intensity={0.4} />
       <spotLight
         intensity={0.4}
         angle={0.1}

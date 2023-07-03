@@ -293,3 +293,7 @@
   transition: 1.5s ease-in-out;
   font-size: 3rem;
 }
+
+.lightFilter {
+  filter: hue-rotate(70deg) invert(100%);
+}

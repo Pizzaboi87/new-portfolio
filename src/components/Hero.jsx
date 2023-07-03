@@ -17,7 +17,7 @@ const Hero = () => {
       >
         <div
           className={`flex flex-col justify-center items-center mt-5 ${
-            darkMode ? null : 'invert hue-rotate-[70deg]'
+            darkMode ? null : 'lightFilter'
           }`}
         >
           <div className="w-5 h-5 rounded-full bg-[#ff8d00]" />
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className={darkMode ? null : 'invert'}>
           <h1
             className={`${styles.heroHeadText} ${
-              darkMode ? null : 'invert hue-rotate-[70deg]'
+              darkMode ? null : 'lightFilter'
             } text-black`}
           >
             Hi, I'm{' '}
@@ -59,7 +59,11 @@ const Hero = () => {
       </div>
       <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
         <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2">
+          <div
+            className={`w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2 ${
+              darkMode ? null : 'lightFilter'
+            }`}
+          >
             <motion.div
               animate={{
                 y: [0, 24, 0],

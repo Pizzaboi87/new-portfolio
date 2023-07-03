@@ -8,6 +8,7 @@ import {
   Tech,
   Portfolio,
   Education,
+  Footer
 } from "./components";
 import { CheckSizeContextProvider } from "./context/checkSize.context";
 
@@ -27,6 +28,7 @@ const App = () => {
           <Portfolio />
           <Contact />
         </div>
+        <Footer />
       </CheckSizeContextProvider>
     </BrowserRouter>
   );

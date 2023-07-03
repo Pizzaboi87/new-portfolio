@@ -10,6 +10,7 @@ import Contact from './Contact';
 import MobileProjectCard from './MobileProjectCard';
 import DesktopProjectCard from './DesktopProjectCard';
 import Footer from './Footer';
+import MainPage from './MainPage';
 
 export {
   Hero,
@@ -24,4 +25,5 @@ export {
   DesktopProjectCard,
   Contact,
   Footer,
+  MainPage,
 };

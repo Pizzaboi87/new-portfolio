@@ -3,13 +3,12 @@ import { DarkModeContext } from '../context';
 import {
   About,
   Contact,
-  Experience,
   Hero,
   Navbar,
   Tech,
   Portfolio,
-  Education,
   Footer,
+  History,
 } from './';
 
 const MainPage = () => {
@@ -31,8 +30,7 @@ const MainPage = () => {
           <Hero />
         </div>
         <About />
-        <Experience />
-        <Education />
+        <History />
         <Tech />
         <Portfolio />
         <Contact />

@@ -2,9 +2,9 @@ import Hero from './Hero';
 import Navbar from './Navbar';
 import SectionText from './SectionText';
 import About from './About';
-import Tech from './Tech';
+import History from './History';
 import Experience from './Experience';
-import Education from './Education';
+import Tech from './Tech';
 import ExperienceCard from './ExperienceCard';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
@@ -18,9 +18,9 @@ export {
   Navbar,
   SectionText,
   About,
-  Tech,
+  History,
   Experience,
-  Education,
+  Tech,
   ExperienceCard,
   Portfolio,
   MobileProjectCard,

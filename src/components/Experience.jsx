@@ -2,40 +2,54 @@ import SectionText from './SectionText';
 import ExperienceCard from './ExperienceCard';
 import { useContext } from 'react';
 import { experiences, experienceSection } from '../constants';
-import { SectionWrapper } from '../hoc';
+import { education, educationSection } from '../constants';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import { CheckSizeContext, DarkModeContext } from '../context';
 import 'react-vertical-timeline-component/style.min.css';
 
-const Experience = () => {
+const Experience = ({ expOrEdu }) => {
   const smallView = useContext(CheckSizeContext);
   const [darkMode] = useContext(DarkModeContext);
 
   return (
-    <>
+    <section>
       <SectionText
-        sub={experienceSection.sub}
-        titleFirst={experienceSection.titleFirst}
-        titleSec={experienceSection.titleSec}
+        sub={expOrEdu ? experienceSection.sub : educationSection.sub}
+        titleFirst={
+          expOrEdu ? experienceSection.titleFirst : educationSection.titleFirst
+        }
+        titleSec={
+          expOrEdu ? experienceSection.titleSec : educationSection.titleSec
+        }
       />
-      <div className="mt-20 flex flex-col">
+      <div className="mt-16 mb-24 flex flex-col">
         <VerticalTimeline
           lineColor={darkMode ? '#ffffff' : '#58a9ff'}
           animate={smallView ? false : true}
         >
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={index}
-              experience={experience}
-              experienceSection={true}
-              darkMode={darkMode}
-              smallView={smallView}
-            />
-          ))}
+          {expOrEdu
+            ? experiences.map((experience, index) => (
+                <ExperienceCard
+                  key={index}
+                  experience={experience}
+                  experienceSection={expOrEdu}
+                  darkMode={darkMode}
+                  smallView={smallView}
+                />
+              ))
+            : education.map((eduPlace, index) => (
+                <ExperienceCard
+                  key={index}
+                  experience={eduPlace}
+                  experienceSection={expOrEdu}
+                  darkMode={darkMode}
+                  smallView={smallView}
+                />
+              ))}
         </VerticalTimeline>
       </div>
-    </>
+    </section>
   );
 };
 
-export default SectionWrapper(Experience, 'work');
+export default Experience;

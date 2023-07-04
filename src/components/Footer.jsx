@@ -1,8 +1,7 @@
 import { contact } from '../constants';
 import { Icon } from '@iconify/react';
 import { useContext } from 'react';
-import { CheckSizeContext } from '../context/checkSize.context';
-import { DarkModeContext } from '../context/darkMode.context';
+import { CheckSizeContext, DarkModeContext } from '../context';
 
 const Footer = () => {
   const smallView = useContext(CheckSizeContext);

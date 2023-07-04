@@ -1,7 +1,7 @@
+import Tilt from 'react-parallax-tilt';
 import { useContext } from 'react';
 import { Icon } from '@iconify/react';
-import Tilt from 'react-parallax-tilt';
-import { DarkModeContext } from '../context/darkMode.context';
+import { DarkModeContext } from '../context';
 
 const IconContainer = ({ icon, href }) => {
   const [darkMode] = useContext(DarkModeContext);
@@ -24,7 +24,6 @@ const IconContainer = ({ icon, href }) => {
 
 const DesktopProjectCard = ({
   title,
-  alt,
   link,
   github,
   cover,

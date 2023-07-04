@@ -1,7 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { MainPage } from './components';
-import { CheckSizeContextProvider } from './context/checkSize.context';
-import { DarkModeContextProvider } from './context/darkMode.context';
+import { CheckSizeContextProvider, DarkModeContextProvider } from './context';
 
 const App = () => {
   return (

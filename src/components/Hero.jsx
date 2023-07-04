@@ -2,8 +2,7 @@ import { useRef, useContext } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { styles } from '../styles';
 import { CanvasWrapper, AtAtModel } from './canvas';
-import { CheckSizeContext } from '../context/checkSize.context';
-import { DarkModeContext } from '../context/darkMode.context';
+import { CheckSizeContext, DarkModeContext } from '../context';
 
 const Hero = () => {
   const ref = useRef(null);

@@ -2,8 +2,7 @@ import { useContext } from 'react';
 import { styles } from '../styles';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant } from '../utils/motion';
-import { CheckSizeContext } from '../context/checkSize.context';
-import { DarkModeContext } from '../context/darkMode.context';
+import { CheckSizeContext, DarkModeContext } from '../context';
 
 const SectionText = ({ sub, titleFirst, titleSec, text }) => {
   const smallView = useContext(CheckSizeContext);

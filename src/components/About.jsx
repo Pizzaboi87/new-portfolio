@@ -1,3 +1,4 @@
+import SectionText from './SectionText';
 import Tilt from 'react-parallax-tilt';
 import { useContext } from 'react';
 import { services, aboutSection } from '../constants';
@@ -5,7 +6,6 @@ import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import { CheckSizeContext } from '../context/checkSize.context';
-import SectionText from './SectionText';
 
 const ServiceCard = ({ index, title, image }) => {
   const smallView = useContext(CheckSizeContext);

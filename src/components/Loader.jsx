@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Html, useProgress } from '@react-three/drei';
-import { DarkModeContext } from '../context/darkMode.context';
+import { DarkModeContext } from '../context';
 
 const Loader = () => {
   const { progress } = useProgress();

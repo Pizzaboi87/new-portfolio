@@ -1,7 +1,7 @@
-import { useContext } from 'react';
 import Tilt from 'react-parallax-tilt';
+import { useContext } from 'react';
 import { Icon } from '@iconify/react';
-import { DarkModeContext } from '../context/darkMode.context';
+import { DarkModeContext } from '../context';
 
 const IconContainer = ({ icon, href }) => {
   const [darkMode] = useContext(DarkModeContext);

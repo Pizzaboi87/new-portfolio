@@ -5,8 +5,7 @@ import { useInView, motion } from 'framer-motion';
 import { CanvasWrapper, BB8Model } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
-import { CheckSizeContext } from '../context/checkSize.context';
-import { DarkModeContext } from '../context/darkMode.context';
+import { CheckSizeContext, DarkModeContext } from '../context';
 import { contactSection } from '../constants';
 
 const Contact = () => {

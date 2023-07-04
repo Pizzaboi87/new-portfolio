@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DarkModeContext } from '../context/darkMode.context';
+import { DarkModeContext } from '../context';
 import {
   About,
   Contact,

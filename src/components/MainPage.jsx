@@ -17,6 +17,7 @@ const MainPage = () => {
 
   return (
     <>
+      <Navbar />
       <div
         className={`${
           darkMode ? 'bg-primary' : 'bg-primaryLight'
@@ -27,7 +28,6 @@ const MainPage = () => {
             darkMode ? 'hero__dark' : 'hero__light'
           } bg-cover bg-no-repeat bg-center`}
         >
-          <Navbar />
           <Hero />
         </div>
         <About />

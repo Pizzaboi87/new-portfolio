@@ -2,12 +2,14 @@ import { useRef, useContext } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { styles } from '../styles';
 import { CanvasWrapper, AtAtModel } from './canvas';
+import { CheckSizeContext } from '../context/checkSize.context';
 import { DarkModeContext } from '../context/darkMode.context';
 
 const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [darkMode] = useContext(DarkModeContext);
+  const smallView = useContext(CheckSizeContext);
 
   return (
     <section className="relative w-full h-screen mx-auto grid">
@@ -55,12 +57,12 @@ const Hero = () => {
       >
         {isInView && (
           <CanvasWrapper rotate={true}>
-            <AtAtModel />
+            <AtAtModel smallView={smallView} />
           </CanvasWrapper>
         )}
       </div>
       <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
-        <a href="#about">
+        <a className="cursor-pointer z-10" href="#about">
           <div
             className={`${
               darkMode ? 'border-orange' : 'border-blue'

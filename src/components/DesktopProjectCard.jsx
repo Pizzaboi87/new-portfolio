@@ -1,21 +1,23 @@
-import Tilt from 'react-parallax-tilt';
-import { useContext } from 'react';
-import { Icon } from '@iconify/react';
-import { DarkModeContext } from '../context';
+import Tilt from "react-parallax-tilt";
+import { useContext } from "react";
+import { Icon } from "@iconify/react";
+import { DarkModeContext } from "../context";
 
 const IconContainer = ({ icon, href }) => {
   const [darkMode] = useContext(DarkModeContext);
 
   return (
     <div
-      onClick={() => window.open(href, '_blank')}
+      onClick={() => window.open(href, "_blank")}
       className={`${
-        icon === 'mdi:github'
-          ? 'github'
-          : icon === 'vaadin:eye'
-          ? 'link'
-          : 'youtube'
-      } ${darkMode ? 'text-orange' : 'text-blue'} text-6xl glass inline-block`}
+        icon === "mdi:github"
+          ? "github"
+          : icon === "vaadin:eye"
+          ? "link"
+          : "youtube"
+      } ${
+        darkMode ? "text-orange glass-dark" : "text-white glass-light"
+      } text-6xl glass inline-block`}
     >
       <Icon icon={icon} className="cursor-pointer" />
     </div>
@@ -34,7 +36,9 @@ const DesktopProjectCard = ({
 
   return (
     <Tilt
-      className="topZ box w-[27rem] h-56 rounded-2xl m-10"
+      className={`${
+        darkMode ? "box-dark" : "box-light"
+      } topZ box w-[27rem] h-56 rounded-2xl m-10`}
       perspective={800}
       scale={1}
       max={25}
@@ -51,12 +55,18 @@ const DesktopProjectCard = ({
       {youTube && <IconContainer icon="openmoji:youtube" href={youTube} />}
       <h1
         className={`${
-          darkMode ? 'text-orange' : 'text-blue'
+          darkMode ? "text-orange glass-dark" : "text-white glass-light"
         } glass title inline-block max-w-[20rem] m-0 text-right font-bold text-3xl`}
       >
         {title}
       </h1>
-      <p className="glass details inline-block text-black">{details}</p>
+      <p
+        className={`${
+          darkMode ? "glass-dark text-black" : "glass-light text-white"
+        } glass details inline-block`}
+      >
+        {details}
+      </p>
     </Tilt>
   );
 };

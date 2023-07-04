@@ -236,4 +236,48 @@ const contact = [
   },
 ];
 
-export { services, education, experiences, projects, techLogos, contact };
+const aboutSection = {
+  sub: 'Introduction',
+  titleFirst: 'About',
+  titleSec: 'Me',
+  text: 'I am a self-taught front-end developer with growing experience in React development, who gained proficiency in JavaScript, TypeScript, React Native, Firebase, and currently learning C# and Unity Game Engine as well. I enjoy creating visually appealing, user-friendly, and responsive web pages and applications. My humility helps me stay open to learning, while passion ensures my enthusiasm and motivation. Effective communication is crucial for me to understand expectations, accept feedback and collaborate with others.',
+};
+
+const experienceSection = {
+  sub: 'What I have done so far',
+  titleFirst: 'Work',
+  titleSec: 'Experience',
+};
+
+const educationSection = {
+  sub: 'Where have I studied so far?',
+  titleFirst: 'Academic',
+  titleSec: 'History',
+};
+
+const portfolioSection = {
+  sub: 'Some of my previous projects',
+  titleFirst: 'Portfolio',
+  titleSec: 'Gallery',
+  text: 'I am happy to share with you a collection of projects that have been instrumental in shaping my journey as a front-end developer, with a strong emphasis on React and React Native. These projects have served as invaluable learning experiences, illustrating my commitment to continuous improvement and honing my skills.',
+};
+
+const contactSection = {
+  sub: 'Get in touch',
+  titleFirst: 'Contact',
+  titleSec: 'Me',
+};
+
+export {
+  services,
+  education,
+  experiences,
+  projects,
+  techLogos,
+  contact,
+  aboutSection,
+  experienceSection,
+  educationSection,
+  portfolioSection,
+  contactSection,
+};

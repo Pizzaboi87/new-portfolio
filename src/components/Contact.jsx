@@ -1,12 +1,13 @@
+import SectionText from './SectionText';
 import emailjs from '@emailjs/browser';
 import { useState, useRef, useContext } from 'react';
 import { useInView, motion } from 'framer-motion';
-import { styles } from '../styles';
 import { CanvasWrapper, BB8Model } from './canvas';
 import { SectionWrapper } from '../hoc';
-import { textVariant, slideIn } from '../utils/motion';
+import { slideIn } from '../utils/motion';
 import { CheckSizeContext } from '../context/checkSize.context';
 import { DarkModeContext } from '../context/darkMode.context';
+import { contactSection } from '../constants';
 
 const Contact = () => {
   const smallView = useContext(CheckSizeContext);
@@ -59,25 +60,11 @@ const Contact = () => {
           darkMode ? 'bg-tertiary' : 'bg-tertiaryLight'
         } flex-1 p-8 rounded-2xl`}
       >
-        <DynamicDiv variants={textVariant(0)}>
-          <p
-            className={
-              darkMode ? styles.sectionSubText : styles.sectionSubTextLight
-            }
-          >
-            Get in touch
-          </p>
-          <h3
-            className={
-              darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
-            }
-          >
-            <span className={darkMode ? 'text-orange' : 'text-blue'}>
-              Contact{' '}
-            </span>
-            Me
-          </h3>
-        </DynamicDiv>
+        <SectionText
+          sub={contactSection.sub}
+          titleFirst={contactSection.titleFirst}
+          titleSec={contactSection.titleSec}
+        />
         <form
           ref={formRef}
           onSubmit={handleSubmit}

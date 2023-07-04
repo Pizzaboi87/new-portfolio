@@ -1,12 +1,11 @@
 import Tilt from 'react-parallax-tilt';
 import { useContext } from 'react';
-import { styles } from '../styles';
-import { services } from '../constants';
+import { services, aboutSection } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { motion } from 'framer-motion';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn } from '../utils/motion';
 import { CheckSizeContext } from '../context/checkSize.context';
-import { DarkModeContext } from '../context/darkMode.context';
+import SectionText from './SectionText';
 
 const ServiceCard = ({ index, title, image }) => {
   const smallView = useContext(CheckSizeContext);
@@ -33,45 +32,14 @@ const ServiceCard = ({ index, title, image }) => {
 };
 
 const About = () => {
-  const smallView = useContext(CheckSizeContext);
-  const [darkMode] = useContext(DarkModeContext);
-  const DynamicDiv = smallView ? 'div' : motion.div;
-  const DynamicP = smallView ? 'p' : motion.p;
-
   return (
     <>
-      <DynamicDiv variants={textVariant(0)}>
-        <p
-          className={
-            darkMode ? styles.sectionSubText : styles.sectionSubTextLight
-          }
-        >
-          Introduction
-        </p>
-        <h2
-          className={
-            darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
-          }
-        >
-          <span className={darkMode ? 'text-orange' : 'text-blue'}>About </span>
-          Me
-        </h2>
-      </DynamicDiv>
-      <DynamicP
-        variants={fadeIn('right', 'spring', 0, 0.5)}
-        className={`${
-          darkMode ? 'text-secondary' : 'text-tertiary'
-        } mt-4 text-[17px] max-w-3xl leading-[30px] text-justify`}
-      >
-        I am a self-taught front-end developer with growing experience in React
-        development, who gained proficiency in JavaScript, TypeScript, React
-        Native, Firebase, and currently learning C# and Unity Game Engine as
-        well. I enjoy creating visually appealing, user-friendly, and responsive
-        web pages and applications. My humility helps me stay open to learning,
-        while passion ensures my enthusiasm and motivation. Effective
-        communication is crucial for me to understand expectations, accept
-        feedback and collaborate with others.
-      </DynamicP>
+      <SectionText
+        sub={aboutSection.sub}
+        titleFirst={aboutSection.titleFirst}
+        titleSec={aboutSection.titleSec}
+        text={aboutSection.text}
+      />
 
       <div className="mt-20 flex flex-wrap gap-6 justify-center">
         {services.map((service, index) => (

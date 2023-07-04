@@ -1,11 +1,9 @@
+import SectionText from './SectionText';
 import ExperienceCard from './ExperienceCard';
 import { useContext } from 'react';
-import { styles } from '../styles';
-import { education } from '../constants';
+import { education, educationSection } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
-import { motion } from 'framer-motion';
-import { textVariant } from '../utils/motion';
 import { CheckSizeContext } from '../context/checkSize.context';
 import { DarkModeContext } from '../context/darkMode.context';
 import 'react-vertical-timeline-component/style.min.css';
@@ -13,29 +11,14 @@ import 'react-vertical-timeline-component/style.min.css';
 const Education = () => {
   const smallView = useContext(CheckSizeContext);
   const [darkMode] = useContext(DarkModeContext);
-  const DynamicDiv = smallView ? 'div' : motion.div;
 
   return (
     <>
-      <DynamicDiv variants={textVariant(0)}>
-        <p
-          className={
-            darkMode ? styles.sectionSubText : styles.sectionSubTextLight
-          }
-        >
-          where have I studied so far?
-        </p>
-        <h2
-          className={
-            darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
-          }
-        >
-          <span className={darkMode ? 'text-orange' : 'text-blue'}>
-            Academic{' '}
-          </span>
-          History
-        </h2>
-      </DynamicDiv>
+      <SectionText
+        sub={educationSection.sub}
+        titleFirst={educationSection.titleFirst}
+        titleSec={educationSection.titleSec}
+      />
       <div className="mt-20 flex flex-col">
         <VerticalTimeline
           lineColor={darkMode ? '#ffffff' : '#58a9ff'}

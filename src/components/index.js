@@ -1,5 +1,6 @@
 import Hero from './Hero';
 import Navbar from './Navbar';
+import SectionText from './SectionText';
 import About from './About';
 import Tech from './Tech';
 import Experience from './Experience';
@@ -15,6 +16,7 @@ import MainPage from './MainPage';
 export {
   Hero,
   Navbar,
+  SectionText,
   About,
   Tech,
   Experience,

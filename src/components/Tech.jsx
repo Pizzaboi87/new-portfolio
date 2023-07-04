@@ -18,7 +18,7 @@ const Tech = () => {
   );
 
   return (
-    <div className="slider relative w-[100vw] md:h-24 h-16 bg-white flex items-center overflow-hidden">
+    <div className="slider relative w-[100vw] md:h-24 h-16 bg-white flex items-center overflow-hidden m-10">
       <ul
         className="brands flex list-none"
         style={{ width: 'var(--total-logo-width)' }}

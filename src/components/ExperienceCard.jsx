@@ -1,12 +1,18 @@
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-const ExperienceCard = ({ experience, experienceSection, darkMode }) => (
+const ExperienceCard = ({
+  experience,
+  experienceSection,
+  darkMode,
+  smallView,
+}) => (
   <VerticalTimelineElement
     contentStyle={{
       background: darkMode ? '#2c2744' : '#c2dae6',
       color: darkMode ? '#ffffff' : '#000000',
     }}
+    className={smallView ? '-mx-4' : null}
     contentArrowStyle={{
       borderRight: `7px solid ${darkMode ? '#ff8d00' : '#58a9ff'}`,
     }}
@@ -44,7 +50,7 @@ const ExperienceCard = ({ experience, experienceSection, darkMode }) => (
       </p>
     </div>
     {experienceSection && (
-      <ul className="mt-5 list-disc ml-5 space-y-2">
+      <ul className="mt-5 list-disc ml-2 space-y-2">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}

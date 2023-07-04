@@ -60,7 +60,7 @@ const About = () => {
       <DynamicP
         variants={fadeIn('right', 'spring', 0, 0.5)}
         className={`${
-          darkMode ? 'text-secondary' : 'text-secondaryLight'
+          darkMode ? 'text-secondary' : 'text-tertiary'
         } mt-4 text-[17px] max-w-3xl leading-[30px] text-justify`}
       >
         I am a self-taught front-end developer with growing experience in React

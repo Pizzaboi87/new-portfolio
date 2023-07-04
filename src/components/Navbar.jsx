@@ -10,9 +10,21 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [darkMode] = useContext(DarkModeContext);
 
+  const textColor = (link) => {
+    if (darkMode) {
+      if (active === link.title) return 'text-orange';
+      else return 'text-secondary hover:text-orange';
+    } else {
+      if (active === link.title) return 'text-blue';
+      else return 'text-tertiary hover:text-blue';
+    }
+  };
+
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      className={`${styles.paddingX} ${
+        darkMode ? 'bg-primary' : 'bg-primaryLight'
+      } w-full flex items-center py-5 fixed top-0 z-20`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -23,8 +35,16 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+          <img
+            src={logo}
+            alt="logo"
+            className={`${darkMode ? null : 'invert'} w-9 h-9 object-contain`}
+          />
+          <p
+            className={`${
+              darkMode ? 'text-white' : 'text-tertiary'
+            } text-[18px] font-bold cursor-pointer flex`}
+          >
             <span className="sm:block hidden">Peter &nbsp;</span>Weiser
           </p>
         </Link>
@@ -32,9 +52,9 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${
-                active === link.title ? 'text-orange' : 'text-secondary'
-              } hover:text-orange text-[18px] font-medium cursor-pointer`}
+              className={`${textColor(
+                link
+              )} text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`${link.id}`}>{link.title}</a>
@@ -45,21 +65,23 @@ const Navbar = () => {
           <img
             src={toggle ? close : menu}
             alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+            className={`${
+              darkMode ? null : 'invert'
+            } w-[28px] h-[28px] object-contain cursor-pointer`}
             onClick={() => setToggle(!toggle)}
           />
           <div
-            className={`${
-              !toggle ? 'navOff' : 'navOn'
-            } bg-tertiary absolute flex -z-[1] flex-col`}
+            className={`${!toggle ? 'navOff' : 'navOn'} ${
+              darkMode ? 'bg-tertiary' : 'bg-tertiaryLight'
+            } absolute flex -z-[1] flex-col`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
-                  className={`${
-                    active === link.title ? 'text-orange' : 'text-secondary'
-                  } font-poppins font-medium cursor-pointer text-[16px] hover:text-orange`}
+                  className={`${textColor(
+                    link
+                  )} font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);

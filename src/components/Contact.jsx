@@ -86,7 +86,7 @@ const Contact = () => {
           <label className="flex flex-col">
             <span
               className={`${
-                darkMode ? 'text-white' : 'text-black'
+                darkMode ? 'text-white' : 'text-tertiary'
               } font-medium mb-4`}
             >
               Your Name
@@ -101,14 +101,14 @@ const Contact = () => {
               className={`${
                 darkMode
                   ? 'bg-cardBg placeholder:text-secondary text-white'
-                  : 'bg-cardBgLight placeholder:text-secondaryLight text-black'
+                  : 'bg-cardBgLight placeholder:text-secondaryLight text-tertiary'
               } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className="flex flex-col">
             <span
               className={`${
-                darkMode ? 'text-white' : 'text-black'
+                darkMode ? 'text-white' : 'text-tertiary'
               } font-medium mb-4`}
             >
               Your Email Address
@@ -123,14 +123,14 @@ const Contact = () => {
               className={`${
                 darkMode
                   ? 'bg-cardBg placeholder:text-secondary text-white'
-                  : 'bg-cardBgLight placeholder:text-secondaryLight text-black'
+                  : 'bg-cardBgLight placeholder:text-secondaryLight text-tertiary'
               } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className="flex flex-col">
             <span
               className={`${
-                darkMode ? 'text-white' : 'text-black'
+                darkMode ? 'text-white' : 'text-tertiary'
               } font-medium mb-4`}
             >
               Your Message
@@ -145,7 +145,7 @@ const Contact = () => {
               className={`${
                 darkMode
                   ? 'bg-cardBg placeholder:text-secondary text-white'
-                  : 'bg-cardBgLight placeholder:text-secondaryLight text-black'
+                  : 'bg-cardBgLight placeholder:text-secondaryLight text-tertiary'
               } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
@@ -153,7 +153,7 @@ const Contact = () => {
             type="submit"
             disabled={loading}
             className={`${loading ? 'cursor-progress' : 'cursor-pointer'} ${
-              darkMode ? 'bg-cardBg text-white' : 'bg-cardBgLight text-black'
+              darkMode ? 'bg-cardBg text-white' : 'bg-cardBgLight text-tertiary'
             } py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl`}
           >
             {loading ? 'Sending...' : 'Send'}

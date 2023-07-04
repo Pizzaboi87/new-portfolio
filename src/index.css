@@ -53,13 +53,43 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.violet-gradient {
+.orange-gradient {
   background: #ff8d00;
   background: linear-gradient(-90deg, #ff8d00 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
     #ff8d00 0%,
     rgba(60, 51, 80, 0) 100%
+  );
+}
+
+.blue-gradient {
+  background: #58a9ff;
+  background: linear-gradient(-90deg, #58a9ff 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #58a9ff 0%,
+    rgba(60, 51, 80, 0) 100%
+  );
+}
+
+.orange-gradient-fullrim {
+  background: #ff8d00;
+  background: linear-gradient(-90deg, #ff8d00 0%, rgba(60, 51, 80) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #ff8d00 0%,
+    rgba(60, 51, 80) 100%
+  );
+}
+
+.blue-gradient-fullrim {
+  background: #58a9ff;
+  background: linear-gradient(-90deg, #58a9ff 0%, rgba(60, 51, 80) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #58a9ff 0%,
+    rgba(60, 51, 80) 100%
   );
 }
 
@@ -286,7 +316,7 @@
 
 .navOff {
   border-radius: 100%;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   top: 1.15rem;
   right: 1.15rem;
   width: 2.5rem;
@@ -299,7 +329,7 @@
 
 .navOn {
   border-radius: 5%;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   top: 0;
   right: 0;
   width: 100%;
@@ -308,10 +338,14 @@
   align-items: center;
 }
 
-.navOn * {
+.navOn ul li {
   visibility: visible;
-  transition: 1.5s ease-in-out;
+  transition: 1s ease-in-out;
   font-size: 3rem;
+}
+
+.navOn li:hover {
+  transition: none;
 }
 
 .lightFilter {

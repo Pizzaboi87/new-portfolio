@@ -45,6 +45,7 @@ const Experience = () => {
               experience={experience}
               experienceSection={true}
               darkMode={darkMode}
+              smallView={smallView}
             />
           ))}
         </VerticalTimeline>

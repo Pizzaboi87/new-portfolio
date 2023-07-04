@@ -1,17 +1,19 @@
-import MobileProjectCard from "./MobileProjectCard";
-import DesktopProjectCard from "./DesktopProjectCard";
-import { useContext } from "react";
-import { styles } from "../styles";
-import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
-import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
-import { CheckSizeContext } from "../context/checkSize.context";
+import MobileProjectCard from './MobileProjectCard';
+import DesktopProjectCard from './DesktopProjectCard';
+import { useContext } from 'react';
+import { styles } from '../styles';
+import { SectionWrapper } from '../hoc';
+import { projects } from '../constants';
+import { motion } from 'framer-motion';
+import { fadeIn, textVariant } from '../utils/motion';
+import { CheckSizeContext } from '../context/checkSize.context';
+import { DarkModeContext } from '../context/darkMode.context';
 
 const Portfolio = () => {
   const smallView = useContext(CheckSizeContext);
-  const DynamicDiv = smallView ? "div" : motion.div;
-  const DynamicP = smallView ? "p" : motion.p;
+  const [darkMode] = useContext(DarkModeContext);
+  const DynamicDiv = smallView ? 'div' : motion.div;
+  const DynamicP = smallView ? 'p' : motion.p;
 
   const mobile = projects.map((project, index) => (
     <MobileProjectCard key={project.id} {...project} index={index} />
@@ -24,16 +26,16 @@ const Portfolio = () => {
   return (
     <section>
       <DynamicDiv variants={textVariant(0)}>
-        <p className={styles.sectionSubText}>Some of my previous projects</p>
-        <h2 className={styles.sectionHeadText}>
-          <span className="text-orange">Portfolio </span>Gallery
+        <p className={darkMode ? styles.sectionSubText : styles.sectionSubTextLight}>Some of my previous projects</p>
+        <h2 className={darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight}>
+          <span className={darkMode ? 'text-orange' : 'text-blue'}>Portfolio </span>Gallery
         </h2>
       </DynamicDiv>
 
       <div className="w-full flex">
         <DynamicP
-          variants={fadeIn("right", "spring", 0, 0.5)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
+          variants={fadeIn('right', 'spring', 0, 0.5)}
+          className={`${darkMode ? 'text-secondary' : 'text-tertiary'} mt-3 text-[17px] max-w-3xl leading-[30px] text-justify`}
         >
           I am happy to share with you a collection of projects that have been
           instrumental in shaping my journey as a front-end developer, with a
@@ -50,4 +52,4 @@ const Portfolio = () => {
   );
 };
 
-export default SectionWrapper(Portfolio, "portfolio");
+export default SectionWrapper(Portfolio, 'portfolio');

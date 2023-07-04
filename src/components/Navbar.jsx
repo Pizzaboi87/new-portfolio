@@ -23,31 +23,17 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img
-            src={logo}
-            alt="logo"
-            className={`w-9 h-9 object-contain ${
-              darkMode ? null : 'lightFilter'
-            }`}
-          />
+          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             <span className="sm:block hidden">Peter &nbsp;</span>Weiser
           </p>
         </Link>
-        <ul
-          className={`list-none hidden sm:flex flex-row gap-10 ${
-            darkMode ? null : 'lightFilter'
-          }`}
-        >
+        <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
               className={`${
-                active === link.title
-                  ? 'text-orange'
-                  : darkMode
-                  ? 'text-secondary'
-                  : 'text-black'
+                active === link.title ? 'text-orange' : 'text-secondary'
               } hover:text-orange text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
@@ -67,20 +53,12 @@ const Navbar = () => {
               !toggle ? 'navOff' : 'navOn'
             } bg-tertiary absolute flex -z-[1] flex-col`}
           >
-            <ul
-              className={`list-none flex justify-end items-start flex-col gap-4 ${
-                darkMode ? null : 'lightFilter'
-              }`}
-            >
+            <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title
-                      ? 'text-orange'
-                      : darkMode
-                      ? 'text-secondary'
-                      : 'text-black'
+                    active === link.title ? 'text-orange' : 'text-secondary'
                   } font-poppins font-medium cursor-pointer text-[16px] hover:text-orange`}
                   onClick={() => {
                     setToggle(!toggle);

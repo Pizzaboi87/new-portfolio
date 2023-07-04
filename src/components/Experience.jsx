@@ -17,10 +17,7 @@ const Experience = () => {
 
   return (
     <>
-      <DynamicDiv
-        variants={textVariant(0)}
-        className={darkMode ? null : 'lightFilter'}
-      >
+      <DynamicDiv variants={textVariant(0)}>
         <p
           className={
             darkMode ? styles.sectionSubText : styles.sectionSubTextLight
@@ -33,12 +30,13 @@ const Experience = () => {
             darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
           }
         >
-          <span className="text-orange">Work </span>Experience
+          <span className={darkMode ? 'text-orange' : 'text-blue'}>Work </span>
+          Experience
         </h2>
       </DynamicDiv>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline
-          lineColor={'#ffffff'}
+          lineColor={darkMode ? '#ffffff' : '#58a9ff'}
           animate={smallView ? false : true}
         >
           {experiences.map((experience, index) => (
@@ -46,6 +44,7 @@ const Experience = () => {
               key={index}
               experience={experience}
               experienceSection={true}
+              darkMode={darkMode}
             />
           ))}
         </VerticalTimeline>

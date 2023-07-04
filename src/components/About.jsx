@@ -40,10 +40,7 @@ const About = () => {
 
   return (
     <>
-      <DynamicDiv
-        variants={textVariant(0)}
-        className={darkMode ? null : 'lightFilter'}
-      >
+      <DynamicDiv variants={textVariant(0)}>
         <p
           className={
             darkMode ? styles.sectionSubText : styles.sectionSubTextLight
@@ -56,12 +53,15 @@ const About = () => {
             darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
           }
         >
-          <span className="text-orange">About </span>Me
+          <span className={darkMode ? 'text-orange' : 'text-blue'}>About </span>
+          Me
         </h2>
       </DynamicDiv>
       <DynamicP
         variants={fadeIn('right', 'spring', 0, 0.5)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify"
+        className={`${
+          darkMode ? 'text-secondary' : 'text-secondaryLight'
+        } mt-4 text-[17px] max-w-3xl leading-[30px] text-justify`}
       >
         I am a self-taught front-end developer with growing experience in React
         development, who gained proficiency in JavaScript, TypeScript, React
@@ -73,11 +73,7 @@ const About = () => {
         feedback and collaborate with others.
       </DynamicP>
 
-      <div
-        className={`mt-20 flex flex-wrap gap-6 justify-center ${
-          darkMode ? null : 'invert hue-rotate-[240deg]'
-        }`}
-      >
+      <div className="mt-20 flex flex-wrap gap-6 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

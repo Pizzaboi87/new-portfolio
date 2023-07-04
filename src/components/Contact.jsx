@@ -1,24 +1,26 @@
-import emailjs from "@emailjs/browser";
-import { useState, useRef, useContext } from "react";
-import { useInView, motion } from "framer-motion";
-import { styles } from "../styles";
-import { CanvasWrapper, BB8Model } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { textVariant, slideIn } from "../utils/motion";
-import { CheckSizeContext } from "../context/checkSize.context";
+import emailjs from '@emailjs/browser';
+import { useState, useRef, useContext } from 'react';
+import { useInView, motion } from 'framer-motion';
+import { styles } from '../styles';
+import { CanvasWrapper, BB8Model } from './canvas';
+import { SectionWrapper } from '../hoc';
+import { textVariant, slideIn } from '../utils/motion';
+import { CheckSizeContext } from '../context/checkSize.context';
+import { DarkModeContext } from '../context/darkMode.context';
 
 const Contact = () => {
   const smallView = useContext(CheckSizeContext);
-  const DynamicDiv = smallView ? "div" : motion.div;
+  const [darkMode] = useContext(DarkModeContext);
+  const DynamicDiv = smallView ? 'div' : motion.div;
 
   const formRef = useRef(null);
   const canvasRef = useRef(null);
   const isInView = useInView(canvasRef);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
   const valueCheck = (form) => {
@@ -26,13 +28,13 @@ const Contact = () => {
     const messageRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
     if (!nameRegex.test(form.name)) {
-      alert("Please enter a valid name.");
+      alert('Please enter a valid name.');
       setLoading(false);
       return;
     }
 
     if (!messageRegex.test(form.message)) {
-      alert("Please enter a valid message.");
+      alert('Please enter a valid message.');
       setLoading(false);
       return;
     }
@@ -52,13 +54,28 @@ const Contact = () => {
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
       <DynamicDiv
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-1 bg-tertiary p-8 rounded-2xl"
+        variants={slideIn('left', 'tween', 0.2, 1)}
+        className={`${
+          darkMode ? 'bg-tertiary' : 'bg-tertiaryLight'
+        } flex-1 p-8 rounded-2xl`}
       >
         <DynamicDiv variants={textVariant(0)}>
-          <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadText}>
-            <span className="text-orange">Contact </span>Me
+          <p
+            className={
+              darkMode ? styles.sectionSubText : styles.sectionSubTextLight
+            }
+          >
+            Get in touch
+          </p>
+          <h3
+            className={
+              darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
+            }
+          >
+            <span className={darkMode ? 'text-orange' : 'text-blue'}>
+              Contact{' '}
+            </span>
+            Me
           </h3>
         </DynamicDiv>
         <form
@@ -67,7 +84,13 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span
+              className={`${
+                darkMode ? 'text-white' : 'text-black'
+              } font-medium mb-4`}
+            >
+              Your Name
+            </span>
             <input
               type="text"
               name="name"
@@ -75,11 +98,19 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your name?"
               required
-              className="bg-cardBg py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`${
+                darkMode
+                  ? 'bg-cardBg placeholder:text-secondary text-white'
+                  : 'bg-cardBgLight placeholder:text-secondaryLight text-black'
+              } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">
+            <span
+              className={`${
+                darkMode ? 'text-white' : 'text-black'
+              } font-medium mb-4`}
+            >
               Your Email Address
             </span>
             <input
@@ -89,11 +120,21 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What's your email address?"
               required
-              className="bg-cardBg py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`${
+                darkMode
+                  ? 'bg-cardBg placeholder:text-secondary text-white'
+                  : 'bg-cardBgLight placeholder:text-secondaryLight text-black'
+              } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span
+              className={`${
+                darkMode ? 'text-white' : 'text-black'
+              } font-medium mb-4`}
+            >
+              Your Message
+            </span>
             <textarea
               rows="7"
               name="message"
@@ -101,17 +142,21 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="What would you like to say?"
               required
-              className="bg-cardBg py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`${
+                darkMode
+                  ? 'bg-cardBg placeholder:text-secondary text-white'
+                  : 'bg-cardBgLight placeholder:text-secondaryLight text-black'
+              } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <button
             type="submit"
             disabled={loading}
-            className={`${
-              loading ? "cursor-progress" : "cursor-pointer"
-            } bg-cardBg py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl`}
+            className={`${loading ? 'cursor-progress' : 'cursor-pointer'} ${
+              darkMode ? 'bg-cardBg text-white' : 'bg-cardBgLight text-black'
+            } py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl`}
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? 'Sending...' : 'Send'}
           </button>
         </form>
       </DynamicDiv>
@@ -129,4 +174,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default SectionWrapper(Contact, 'contact');

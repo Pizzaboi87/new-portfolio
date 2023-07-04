@@ -17,10 +17,7 @@ const Education = () => {
 
   return (
     <>
-      <DynamicDiv
-        variants={textVariant(0)}
-        className={darkMode ? null : 'lightFilter'}
-      >
+      <DynamicDiv variants={textVariant(0)}>
         <p
           className={
             darkMode ? styles.sectionSubText : styles.sectionSubTextLight
@@ -33,12 +30,15 @@ const Education = () => {
             darkMode ? styles.sectionHeadText : styles.sectionHeadTextLight
           }
         >
-          <span className="text-orange">Academic </span>History
+          <span className={darkMode ? 'text-orange' : 'text-blue'}>
+            Academic{' '}
+          </span>
+          History
         </h2>
       </DynamicDiv>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline
-          lineColor="#ffffff"
+          lineColor={darkMode ? '#ffffff' : '#58a9ff'}
           animate={smallView ? false : true}
         >
           {education.map((educationPlace, index) => (
@@ -46,6 +46,7 @@ const Education = () => {
               key={index}
               experience={educationPlace}
               experienceSection={false}
+              darkMode={darkMode}
             />
           ))}
         </VerticalTimeline>

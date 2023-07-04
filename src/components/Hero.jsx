@@ -15,30 +15,15 @@ const Hero = () => {
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
-        <div
-          className={`flex flex-col justify-center items-center mt-5 ${
-            darkMode ? null : 'lightFilter'
-          }`}
-        >
+        <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#ff8d00]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
-        <div className={darkMode ? null : 'invert'}>
-          <h1
-            className={`${styles.heroHeadText} ${
-              darkMode ? null : 'lightFilter'
-            } text-black`}
-          >
-            Hi, I'm{' '}
-            <span className={`text-orange ${darkMode ? null : 'invert'}`}>
-              Peter
-            </span>
+        <div>
+          <h1 className={`${styles.heroHeadText} text-black`}>
+            Hi, I'm <span className="text-orange">Peter</span>
           </h1>
-          <p
-            className={`${styles.heroSubText} ${
-              darkMode ? null : 'invert'
-            } mt-2 text-white-100`}
-          >
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I'm a junior front-end <br className="sm:block hidden" />
             developer from Hungary.
           </p>
@@ -47,9 +32,7 @@ const Hero = () => {
 
       <div
         ref={ref}
-        className={`justify-self-end md:h-full md:mt-12 right-0 mt-28 w-full h-[80%] relative overflow-hidden ${
-          darkMode ? null : 'invert'
-        }`}
+        className="justify-self-end md:h-full md:mt-12 right-0 mt-28 w-full h-[80%] relative overflow-hidden"
       >
         {isInView && (
           <CanvasWrapper rotate={true}>
@@ -59,11 +42,7 @@ const Hero = () => {
       </div>
       <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
         <a href="#about">
-          <div
-            className={`w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2 ${
-              darkMode ? null : 'lightFilter'
-            }`}
-          >
+          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-orange flex justify-center items-start p-2">
             <motion.div
               animate={{
                 y: [0, 24, 0],

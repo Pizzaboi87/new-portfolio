@@ -13,6 +13,26 @@
   color-scheme: dark;
 }
 
+.hero__dark {
+  background-image: url('/src/assets/background.png');
+}
+
+.hero__light {
+  position: relative;
+}
+
+.hero__light::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: '';
+  filter: invert(100%) hue-rotate(120deg);
+  background-image: url('/src/assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -296,4 +316,14 @@
 
 .lightFilter {
   filter: hue-rotate(70deg) invert(100%);
+}
+
+.border-color__dark {
+  box-shadow: 0 0 0 4px #ffffff;
+  border-radius: 50%;
+}
+
+.border-color__light {
+  box-shadow: 0 0 0 4px #58a9ff;
+  border-radius: 50%;
 }

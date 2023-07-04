@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
-import { techLogos } from '../constants';
-import { Icon } from '@iconify/react';
+import { useMemo } from "react";
+import { techLogos } from "../constants";
+import { Icon } from "@iconify/react";
 
 const Tech = () => {
   const memoizedIcons = useMemo(
@@ -8,7 +8,7 @@ const Tech = () => {
       techLogos.map((logo, index) => (
         <li
           className="md:text-5xl text-4xl text-center"
-          style={{ width: 'var(--logo-width)' }}
+          style={{ width: "var(--logo-width)" }}
           key={`${logo}-${index}`}
         >
           <Icon icon={logo} />
@@ -18,10 +18,10 @@ const Tech = () => {
   );
 
   return (
-    <div className="slider relative w-[100vw] md:h-24 h-16 bg-white flex items-center overflow-hidden m-10">
+    <div className="slider relative w-[100vw] md:h-24 h-16 bg-white flex items-center overflow-hidden my-10">
       <ul
         className="brands flex list-none"
-        style={{ width: 'var(--total-logo-width)' }}
+        style={{ width: "var(--total-logo-width)" }}
       >
         {memoizedIcons}
         {memoizedIcons}

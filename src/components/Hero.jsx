@@ -1,8 +1,8 @@
-import { useRef, useContext } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { styles } from '../styles';
-import { CanvasWrapper, AtAtModel } from './canvas';
-import { CheckSizeContext, DarkModeContext } from '../context';
+import { useRef, useContext } from "react";
+import { motion, useInView } from "framer-motion";
+import { styles } from "../styles";
+import { CanvasWrapper, AtAtModel } from "./canvas";
+import { CheckSizeContext, DarkModeContext } from "../context";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -11,20 +11,24 @@ const Hero = () => {
   const smallView = useContext(CheckSizeContext);
 
   return (
-    <section className="relative w-full h-screen mx-auto grid">
-      <div className="top-0 w-full h-[320px] absolute z-10"></div>
+    <section
+      className={`${
+        darkMode ? "hero__dark" : "hero__light"
+      } bg-cover bg-no-repeat bg-center relative w-full h-screen mx-auto grid`}
+    >
+      <div className="top-0 w-full h-[320px] absolute z-10" />
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div
             className={`${
-              darkMode ? 'bg-[#ff8d00]' : 'bg-[#58a9ff]'
+              darkMode ? "bg-[#ff8d00]" : "bg-[#58a9ff]"
             } w-5 h-5 rounded-full`}
           />
           <div
             className={`${
-              darkMode ? 'orange-gradient' : 'blue-gradient'
+              darkMode ? "orange-gradient" : "blue-gradient"
             } w-1 sm:h-80 h-40`}
           />
         </div>
@@ -34,8 +38,8 @@ const Hero = () => {
               darkMode ? styles.heroHeadText : styles.heroHeadTextLight
             }
           >
-            Hi, I'm{' '}
-            <span className={darkMode ? 'text-orange' : 'text-blue'}>
+            Hi, I'm{" "}
+            <span className={darkMode ? "text-orange" : "text-blue"}>
               Peter
             </span>
           </h1>
@@ -60,11 +64,17 @@ const Hero = () => {
           </CanvasWrapper>
         )}
       </div>
-      <div className="absolute bottom-5 w-full pr-6 flex justify-end items-center">
+      <div
+        className={`${
+          smallView
+            ? "bottom-20 justify-center p-0"
+            : "bottom-5 justify-end pr-6"
+        } absolute w-full flex items-center`}
+      >
         <a className="cursor-pointer z-10" href="#about">
           <div
             className={`${
-              darkMode ? 'border-orange' : 'border-blue'
+              darkMode ? "border-orange" : "border-blue"
             } w-[35px] h-[64px] rounded-3xl border-4 flex justify-center items-start p-2`}
           >
             <motion.div
@@ -74,10 +84,10 @@ const Hero = () => {
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
-                repeatType: 'loop',
+                repeatType: "loop",
               }}
               className={`${
-                darkMode ? 'bg-orange' : 'bg-blue'
+                darkMode ? "bg-orange" : "bg-blue"
               } w-3 h-3 rounded-full mb-1`}
             />
           </div>

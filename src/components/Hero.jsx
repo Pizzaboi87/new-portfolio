@@ -67,15 +67,15 @@ const Hero = () => {
       <div
         className={`${
           smallView
-            ? "bottom-20 justify-center p-0"
-            : "bottom-5 justify-end pr-6"
-        } absolute w-full flex items-center`}
+            ? "justify-center p-0 h-[36vw] items-top bottom-0"
+            : " justify-end pr-6 bottom-5"
+        } absolute w-full flex`}
       >
         <a className="cursor-pointer z-10" href="#about">
           <div
-            className={`${
-              darkMode ? "border-orange" : "border-blue"
-            } w-[35px] h-[64px] rounded-3xl border-4 flex justify-center items-start p-2`}
+            className={`${darkMode ? "border-orange" : "border-blue"} ${
+              smallView ? "w-[9vw] h-[16vw]" : "w-[35px] h-[64px]"
+            } rounded-3xl border-4 flex justify-center items-start mt-4 p-2`}
           >
             <motion.div
               animate={{
@@ -86,9 +86,9 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className={`${
-                darkMode ? "bg-orange" : "bg-blue"
-              } w-3 h-3 rounded-full mb-1`}
+              className={`${darkMode ? "bg-orange" : "bg-blue"} ${
+                smallView ? "w-[3vw] h-[3vw]" : "w-3 h-3"
+              } rounded-full mb-1`}
             />
           </div>
         </a>

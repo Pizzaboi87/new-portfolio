@@ -8,7 +8,7 @@ import { DarkModeContext } from '../context';
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
-  const [darkMode] = useContext(DarkModeContext);
+  const [darkMode, setDarkMode] = useContext(DarkModeContext);
 
   const textColor = (link) => {
     if (darkMode) {
@@ -60,6 +60,14 @@ const Navbar = () => {
               <a href={`${link.id}`}>{link.title}</a>
             </li>
           ))}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className={`${
+              darkMode ? 'text-white border-white' : 'text-black border-black'
+            } border p-1`}
+          >
+            dark
+          </button>
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img

@@ -60,8 +60,27 @@ const Contact = () => {
     e.preventDefault();
     if (!valueCheck(form)) return;
     else {
-      //errorSwal("Your message hasn't been sent,\nplease try again later.");
-      //successSwal();
+      setLoading(true);
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_SERVICE,
+          import.meta.env.VITE_TEMPLATE,
+          formRef.current,
+          import.meta.env.VITE_KEY
+        )
+        .then(
+          () => {
+            successSwal();
+            setLoading(false);
+            setForm({ name: '', email: '', message: '' });
+          },
+          (error) => {
+            errorSwal(
+              "Your message hasn't been sent,\nplease try again later."
+            );
+            setLoading(false);
+          }
+        );
     }
   };
 
@@ -156,7 +175,7 @@ const Contact = () => {
               darkMode ? 'bg-cardBg text-white' : 'bg-cardBgLight text-tertiary'
             } py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl`}
           >
-            Send
+            {loading ? 'Sending...' : 'Send'}
           </button>
         </form>
       </DynamicDiv>

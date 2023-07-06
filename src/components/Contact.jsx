@@ -56,31 +56,26 @@ const Contact = () => {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!valueCheck(form)) return;
     else {
       setLoading(true);
-      emailjs
-        .sendForm(
+      try {
+        await emailjs.sendForm(
           import.meta.env.VITE_SERVICE,
           import.meta.env.VITE_TEMPLATE,
           formRef.current,
           import.meta.env.VITE_KEY
-        )
-        .then(
-          () => {
-            successSwal();
-            setLoading(false);
-            setForm({ name: '', email: '', message: '' });
-          },
-          (error) => {
-            errorSwal(
-              "Your message hasn't been sent,\nplease try again later."
-            );
-            setLoading(false);
-          }
         );
+        successSwal();
+        setLoading(false);
+        setForm({ name: '', email: '', message: '' });
+      } catch (error) {
+        console.log(error.text);
+        errorSwal("Your message hasn't been sent,\nplease try again later.");
+        setLoading(false);
+      }
     }
   };
 

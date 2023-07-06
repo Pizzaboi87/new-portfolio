@@ -1,5 +1,6 @@
 import SectionText from './SectionText';
 import emailjs from '@emailjs/browser';
+import swal from '@sweetalert/with-react';
 import { useState, useRef, useContext } from 'react';
 import { useInView, motion } from 'framer-motion';
 import { CanvasWrapper, BB8Model } from './canvas';
@@ -23,21 +24,31 @@ const Contact = () => {
     message: '',
   });
 
+  const successSwal = () => {
+    swal('Thank you!', 'Your message has been sent.', 'success', {
+      className: darkMode ? 'darkModal' : 'lightModal',
+    });
+  };
+
+  const errorSwal = (error) => {
+    swal('Something went wrong.', `${error}`, 'error', {
+      className: darkMode ? 'darkModal' : 'lightModal',
+    });
+  };
+
   const valueCheck = (form) => {
     const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
     const messageRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
     if (!nameRegex.test(form.name)) {
-      alert('Please enter a valid name.');
-      setLoading(false);
+      errorSwal('Please enter a valid name.');
       return;
     }
 
     if (!messageRegex.test(form.message)) {
-      alert('Please enter a valid message.');
-      setLoading(false);
+      errorSwal('Please enter a valid message.');
       return;
-    }
+    } else return true;
   };
 
   const handleChange = (e) => {
@@ -47,8 +58,11 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    valueCheck(form);
+    if (!valueCheck(form)) return;
+    else {
+      //errorSwal("Your message hasn't been sent,\nplease try again later.");
+      //successSwal();
+    }
   };
 
   return (
@@ -142,7 +156,7 @@ const Contact = () => {
               darkMode ? 'bg-cardBg text-white' : 'bg-cardBgLight text-tertiary'
             } py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl`}
           >
-            {loading ? 'Sending...' : 'Send'}
+            Send
           </button>
         </form>
       </DynamicDiv>

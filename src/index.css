@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,13 +14,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 
 .hero__dark {
-  background-image: url("/src/assets/background.png");
+  background-image: url('/src/assets/background.png');
 }
 
 .hero__light {
@@ -31,9 +31,9 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  content: "";
+  content: '';
   filter: invert(100%) hue-rotate(120deg);
-  background-image: url("/src/assets/background.png");
+  background-image: url('/src/assets/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -88,7 +88,7 @@
 .slider::before,
 .slider::after {
   position: absolute;
-  content: "";
+  content: '';
   height: 100%;
   width: var(--logo-width);
 }
@@ -230,4 +230,52 @@
 .border-color__light {
   box-shadow: 0 0 0 4px #58a9ff;
   border-radius: 50%;
+}
+
+.swal-icon--success__hide-corners,
+.swal-icon--success:before,
+.swal-icon--success::after {
+  display: none;
+}
+
+.swal-title {
+  font-size: 1.4rem;
+}
+
+.swal-text {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.swal-button:not([disabled]):hover {
+  background: unset;
+}
+
+.lightModal {
+  background: #d6f1fe;
+}
+
+.lightModal .swal-title,
+.lightModal .swal-text,
+.lightModal .swal-button {
+  color: #151030;
+}
+
+.lightModal .swal-button {
+  background: #c2dae6;
+}
+
+.darkModal {
+  background: #151030;
+  border: 2px solid #e5e7eb;
+}
+
+.darkModal .swal-title,
+.darkModal .swal-text,
+.darkModal .swal-button {
+  color: #ffffff;
+}
+
+.darkModal .swal-button {
+  background: #2c2744;
 }

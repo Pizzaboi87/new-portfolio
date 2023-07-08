@@ -1,5 +1,6 @@
 import SectionText from './SectionText';
 import emailjs from '@emailjs/browser';
+import swal from '@sweetalert/with-react';
 import { useState, useRef, useContext } from 'react';
 import { useInView, motion } from 'framer-motion';
 import { CanvasWrapper, BB8Model } from './canvas';
@@ -23,21 +24,31 @@ const Contact = () => {
     message: '',
   });
 
+  const successSwal = () => {
+    swal('Thank you!', 'Your message has been sent.', 'success', {
+      className: darkMode ? 'darkModal' : 'lightModal',
+    });
+  };
+
+  const errorSwal = (error) => {
+    swal('Something went wrong.', `${error}`, 'error', {
+      className: darkMode ? 'darkModal' : 'lightModal',
+    });
+  };
+
   const valueCheck = (form) => {
     const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
     const messageRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
     if (!nameRegex.test(form.name)) {
-      alert('Please enter a valid name.');
-      setLoading(false);
+      errorSwal('Please enter a valid name.');
       return;
     }
 
     if (!messageRegex.test(form.message)) {
-      alert('Please enter a valid message.');
-      setLoading(false);
+      errorSwal('Please enter a valid message.');
       return;
-    }
+    } else return true;
   };
 
   const handleChange = (e) => {
@@ -45,10 +56,27 @@ const Contact = () => {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    valueCheck(form);
+    if (!valueCheck(form)) return;
+    else {
+      setLoading(true);
+      try {
+        await emailjs.sendForm(
+          import.meta.env.VITE_SERVICE,
+          import.meta.env.VITE_TEMPLATE,
+          formRef.current,
+          import.meta.env.VITE_KEY
+        );
+        successSwal();
+        setLoading(false);
+        setForm({ name: '', email: '', message: '' });
+      } catch (error) {
+        console.log(error.text);
+        errorSwal("Your message hasn't been sent,\nplease try again later.");
+        setLoading(false);
+      }
+    }
   };
 
   return (

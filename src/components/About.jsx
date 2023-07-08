@@ -1,15 +1,14 @@
-import SectionText from './SectionText';
-import Tilt from 'react-parallax-tilt';
-import { useContext } from 'react';
-import { services, aboutSection } from '../constants';
-import { SectionWrapper } from '../hoc';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
-import { CheckSizeContext } from '../context/checkSize.context';
+import SectionText from "./SectionText";
+import Tilt from "react-parallax-tilt";
+import { useContext } from "react";
+import { SectionWrapper } from "../hoc";
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/motion";
+import { CheckSizeContext, DatabaseContext } from "../context";
 
 const ServiceCard = ({ index, title, image }) => {
   const smallView = useContext(CheckSizeContext);
-  const DynamicDiv = smallView ? 'div' : motion.div;
+  const DynamicDiv = smallView ? "div" : motion.div;
 
   return (
     <Tilt
@@ -22,7 +21,7 @@ const ServiceCard = ({ index, title, image }) => {
       glareColor="#ffffff"
     >
       <DynamicDiv
-        variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
+        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="md:w-[270px] w-full mx-auto"
       >
         <img src={image} alt={title} className="object-contain" />
@@ -32,17 +31,19 @@ const ServiceCard = ({ index, title, image }) => {
 };
 
 const About = () => {
+  const data = useContext(DatabaseContext);
+
   return (
     <>
       <SectionText
-        sub={aboutSection.sub}
-        titleFirst={aboutSection.titleFirst}
-        titleSec={aboutSection.titleSec}
-        text={aboutSection.text}
+        sub={data.aboutSection.sub}
+        titleFirst={data.aboutSection.titleFirst}
+        titleSec={data.aboutSection.titleSec}
+        text={data.aboutSection.text}
       />
 
       <div className="mt-20 flex flex-wrap gap-6 justify-center">
-        {services.map((service, index) => (
+        {data.services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
@@ -50,4 +51,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, 'about');
+export default SectionWrapper(About, "about");

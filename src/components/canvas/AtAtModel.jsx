@@ -15,7 +15,7 @@ import * as THREE from "three";
 const AtAtModel = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "./src/components/canvas/atat.glb"
+    "./portfolio-assets/atat/atat.glb"
   );
   const { actions } = useAnimations(animations, group);
   const [mixer] = useState(() => new THREE.AnimationMixer(nodes._rootJoint));
@@ -160,6 +160,6 @@ const AtAtModel = (props) => {
   );
 };
 
-useGLTF.preload("./src/components/canvas/atat.glb");
+useGLTF.preload("./portfolio-assets/atat/atat.glb");
 
 export default AtAtModel;

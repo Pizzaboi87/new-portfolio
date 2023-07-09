@@ -13,7 +13,6 @@ export const DatabaseContextProvider = ({ children }) => {
       try {
         const snapshot = await get(ref(database), "/");
         if (snapshot.exists()) {
-          console.log(snapshot.val());
           setData(snapshot.val());
         }
       } catch (error) {

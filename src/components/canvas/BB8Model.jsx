@@ -7,14 +7,16 @@ Source: https://sketchfab.com/3d-models/bb8-animated-15db7644c5b645f195f4d2dc0c5
 Title: BB8 (Animated)
 */
 
-import React, { useRef, useState, useEffect } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { useGLTF, useAnimations } from '@react-three/drei';
-import * as THREE from 'three';
+import React, { useRef, useState, useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useGLTF, useAnimations } from "@react-three/drei";
+import * as THREE from "three";
 
 const BB8Model = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('/bb8/bb8.glb');
+  const { nodes, materials, animations } = useGLTF(
+    "./src/components/canvas/bb8.glb"
+  );
   const { actions } = useAnimations(animations, group);
 
   const [mixer] = useState(() => new THREE.AnimationMixer(null));
@@ -104,6 +106,6 @@ const BB8Model = (props) => {
   );
 };
 
-useGLTF.preload('/bb8/bb8.glb');
+useGLTF.preload("./src/components/canvas/bb8.glb");
 
 export default BB8Model;

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { database } from "../utils/firebase";
 import { ref, get } from "firebase/database";
+import { Loading } from "../components";
 
 export const DatabaseContext = createContext();
 
@@ -23,7 +24,7 @@ export const DatabaseContextProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <Loading />;
 
   return (
     <DatabaseContext.Provider value={data}>{children}</DatabaseContext.Provider>

@@ -16,7 +16,7 @@ const Hero = () => {
         darkMode ? "hero__dark" : "hero__light"
       } bg-cover bg-no-repeat bg-center relative w-full h-screen mx-auto grid`}
     >
-      <div className="top-0 w-full h-[320px] absolute z-10" />
+      <div className="top-0 w-full h-[30%] absolute z-10" />
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >

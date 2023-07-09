@@ -12,6 +12,7 @@ import MobileProjectCard from "./MobileProjectCard";
 import DesktopProjectCard from "./DesktopProjectCard";
 import Footer from "./Footer";
 import MainPage from "./MainPage";
+import Loading from "./Loading";
 
 export {
   Hero,
@@ -28,4 +29,5 @@ export {
   Contact,
   Footer,
   MainPage,
+  Loading,
 };

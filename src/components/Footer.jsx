@@ -1,28 +1,28 @@
-import { contact } from '../constants';
-import { Icon } from '@iconify/react';
-import { useContext } from 'react';
-import { CheckSizeContext, DarkModeContext } from '../context';
+import { Icon } from "@iconify/react";
+import { useContext } from "react";
+import { CheckSizeContext, DarkModeContext, DatabaseContext } from "../context";
 
 const Footer = () => {
   const smallView = useContext(CheckSizeContext);
+  const data = useContext(DatabaseContext);
   const [darkMode] = useContext(DarkModeContext);
 
   return (
     <div
-      className={`${darkMode ? 'bg-primary' : 'bg-primaryLight'} w-full pb-10`}
+      className={`${darkMode ? "bg-primary" : "bg-primaryLight"} w-full pb-10`}
     >
       <div
         className={`${
-          darkMode ? 'text-secondary' : 'text-secondaryLight'
+          darkMode ? "text-secondary" : "text-secondaryLight"
         } flex flex-row gap-10 items-center justify-center`}
       >
-        {contact.map((item, index) => (
+        {data.contact.map((item, index) => (
           <a
             href={item.link}
             target="_blank"
             rel="noreferrer"
             className={`${
-              darkMode ? 'hover:text-orange' : 'hover:text-blue'
+              darkMode ? "hover:text-orange" : "hover:text-blue"
             } flex items-center`}
             key={item.text}
           >

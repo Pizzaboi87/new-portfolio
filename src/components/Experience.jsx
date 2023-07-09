@@ -1,34 +1,37 @@
-import SectionText from './SectionText';
-import ExperienceCard from './ExperienceCard';
-import { useContext } from 'react';
-import { experiences, experienceSection } from '../constants';
-import { education, educationSection } from '../constants';
-import { VerticalTimeline } from 'react-vertical-timeline-component';
-import { CheckSizeContext, DarkModeContext } from '../context';
-import 'react-vertical-timeline-component/style.min.css';
+import SectionText from "./SectionText";
+import ExperienceCard from "./ExperienceCard";
+import { useContext } from "react";
+import { VerticalTimeline } from "react-vertical-timeline-component";
+import { CheckSizeContext, DarkModeContext, DatabaseContext } from "../context";
+import "react-vertical-timeline-component/style.min.css";
 
 const Experience = ({ expOrEdu }) => {
   const smallView = useContext(CheckSizeContext);
+  const data = useContext(DatabaseContext);
   const [darkMode] = useContext(DarkModeContext);
 
   return (
     <section>
       <SectionText
-        sub={expOrEdu ? experienceSection.sub : educationSection.sub}
+        sub={expOrEdu ? data.experienceSection.sub : data.educationSection.sub}
         titleFirst={
-          expOrEdu ? experienceSection.titleFirst : educationSection.titleFirst
+          expOrEdu
+            ? data.experienceSection.titleFirst
+            : data.educationSection.titleFirst
         }
         titleSec={
-          expOrEdu ? experienceSection.titleSec : educationSection.titleSec
+          expOrEdu
+            ? data.experienceSection.titleSec
+            : data.educationSection.titleSec
         }
       />
       <div className="mt-16 mb-24 flex flex-col">
         <VerticalTimeline
-          lineColor={darkMode ? '#ffffff' : '#58a9ff'}
+          lineColor={darkMode ? "#ffffff" : "#58a9ff"}
           animate={smallView ? false : true}
         >
           {expOrEdu
-            ? experiences.map((experience, index) => (
+            ? data.experiences.map((experience, index) => (
                 <ExperienceCard
                   key={index}
                   experience={experience}
@@ -37,7 +40,7 @@ const Experience = ({ expOrEdu }) => {
                   smallView={smallView}
                 />
               ))
-            : education.map((eduPlace, index) => (
+            : data.education.map((eduPlace, index) => (
                 <ExperienceCard
                   key={index}
                   experience={eduPlace}

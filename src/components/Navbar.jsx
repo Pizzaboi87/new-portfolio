@@ -1,15 +1,15 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import { navLinks } from "../constants";
 import { Icon } from "@iconify/react";
 import { logo, menu, close } from "../assets";
-import { DarkModeContext, CheckSizeContext } from "../context";
+import { DarkModeContext, CheckSizeContext, DatabaseContext } from "../context";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const smallView = useContext(CheckSizeContext);
+  const data = useContext(DatabaseContext);
   const [darkMode, setDarkMode] = useContext(DarkModeContext);
 
   const textColor = (link) => {
@@ -68,7 +68,7 @@ const Navbar = () => {
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row items-center gap-10">
-          {navLinks.map((link) => (
+          {data.navLinks.map((link) => (
             <li
               key={link.id}
               className={`${textColor(
@@ -96,7 +96,7 @@ const Navbar = () => {
             } absolute flex -z-[1] flex-col`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLinks.map((link) => (
+              {data.navLinks.map((link) => (
                 <li
                   key={link.id}
                   className={`${textColor(

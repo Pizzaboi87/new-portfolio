@@ -1,38 +1,38 @@
-import SectionText from './SectionText';
-import emailjs from '@emailjs/browser';
-import swal from '@sweetalert/with-react';
-import { useState, useRef, useContext } from 'react';
-import { useInView, motion } from 'framer-motion';
-import { CanvasWrapper, BB8Model } from './canvas';
-import { SectionWrapper } from '../hoc';
-import { slideIn } from '../utils/motion';
-import { CheckSizeContext, DarkModeContext } from '../context';
-import { contactSection } from '../constants';
+import SectionText from "./SectionText";
+import emailjs from "@emailjs/browser";
+import swal from "@sweetalert/with-react";
+import { useState, useRef, useContext } from "react";
+import { useInView, motion } from "framer-motion";
+import { CanvasWrapper, BB8Model } from "./canvas";
+import { SectionWrapper } from "../hoc";
+import { slideIn } from "../utils/motion";
+import { CheckSizeContext, DarkModeContext, DatabaseContext } from "../context";
 
 const Contact = () => {
   const smallView = useContext(CheckSizeContext);
+  const data = useContext(DatabaseContext);
   const [darkMode] = useContext(DarkModeContext);
-  const DynamicDiv = smallView ? 'div' : motion.div;
+  const DynamicDiv = smallView ? "div" : motion.div;
 
   const formRef = useRef(null);
   const canvasRef = useRef(null);
   const isInView = useInView(canvasRef);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const successSwal = () => {
-    swal('Thank you!', 'Your message has been sent.', 'success', {
-      className: darkMode ? 'darkModal' : 'lightModal',
+    swal("Thank you!", "Your message has been sent.", "success", {
+      className: darkMode ? "darkModal" : "lightModal",
     });
   };
 
   const errorSwal = (error) => {
-    swal('Something went wrong.', `${error}`, 'error', {
-      className: darkMode ? 'darkModal' : 'lightModal',
+    swal("Something went wrong.", `${error}`, "error", {
+      className: darkMode ? "darkModal" : "lightModal",
     });
   };
 
@@ -41,12 +41,12 @@ const Contact = () => {
     const messageRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
     if (!nameRegex.test(form.name)) {
-      errorSwal('Please enter a valid name.');
+      errorSwal("Please enter a valid name.");
       return;
     }
 
     if (!messageRegex.test(form.message)) {
-      errorSwal('Please enter a valid message.');
+      errorSwal("Please enter a valid message.");
       return;
     } else return true;
   };
@@ -70,7 +70,7 @@ const Contact = () => {
         );
         successSwal();
         setLoading(false);
-        setForm({ name: '', email: '', message: '' });
+        setForm({ name: "", email: "", message: "" });
       } catch (error) {
         console.log(error.text);
         errorSwal("Your message hasn't been sent,\nplease try again later.");
@@ -82,15 +82,15 @@ const Contact = () => {
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-12 overflow-hidden">
       <DynamicDiv
-        variants={slideIn('left', 'tween', 0.2, 1)}
+        variants={slideIn("left", "tween", 0.2, 1)}
         className={`${
-          darkMode ? 'bg-tertiary' : 'bg-tertiaryLight'
+          darkMode ? "bg-tertiary" : "bg-tertiaryLight"
         } flex-1 p-8 rounded-2xl`}
       >
         <SectionText
-          sub={contactSection.sub}
-          titleFirst={contactSection.titleFirst}
-          titleSec={contactSection.titleSec}
+          sub={data.contactSection.sub}
+          titleFirst={data.contactSection.titleFirst}
+          titleSec={data.contactSection.titleSec}
         />
         <form
           ref={formRef}
@@ -100,7 +100,7 @@ const Contact = () => {
           <label className="flex flex-col">
             <span
               className={`${
-                darkMode ? 'text-white' : 'text-tertiary'
+                darkMode ? "text-white" : "text-tertiary"
               } font-medium mb-4`}
             >
               Your Name
@@ -114,15 +114,15 @@ const Contact = () => {
               required
               className={`${
                 darkMode
-                  ? 'bg-cardBg placeholder:text-secondary text-white'
-                  : 'bg-cardBgLight placeholder:text-secondaryLight text-tertiary'
+                  ? "bg-cardBg placeholder:text-secondary text-white"
+                  : "bg-cardBgLight placeholder:text-secondaryLight text-tertiary"
               } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className="flex flex-col">
             <span
               className={`${
-                darkMode ? 'text-white' : 'text-tertiary'
+                darkMode ? "text-white" : "text-tertiary"
               } font-medium mb-4`}
             >
               Your Email Address
@@ -136,15 +136,15 @@ const Contact = () => {
               required
               className={`${
                 darkMode
-                  ? 'bg-cardBg placeholder:text-secondary text-white'
-                  : 'bg-cardBgLight placeholder:text-secondaryLight text-tertiary'
+                  ? "bg-cardBg placeholder:text-secondary text-white"
+                  : "bg-cardBgLight placeholder:text-secondaryLight text-tertiary"
               } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <label className="flex flex-col">
             <span
               className={`${
-                darkMode ? 'text-white' : 'text-tertiary'
+                darkMode ? "text-white" : "text-tertiary"
               } font-medium mb-4`}
             >
               Your Message
@@ -158,19 +158,19 @@ const Contact = () => {
               required
               className={`${
                 darkMode
-                  ? 'bg-cardBg placeholder:text-secondary text-white'
-                  : 'bg-cardBgLight placeholder:text-secondaryLight text-tertiary'
+                  ? "bg-cardBg placeholder:text-secondary text-white"
+                  : "bg-cardBgLight placeholder:text-secondaryLight text-tertiary"
               } py-4 px-6 rounded-lg outline-none border-none font-medium`}
             />
           </label>
           <button
             type="submit"
             disabled={loading}
-            className={`${loading ? 'cursor-progress' : 'cursor-pointer'} ${
-              darkMode ? 'bg-cardBg text-white' : 'bg-cardBgLight text-tertiary'
+            className={`${loading ? "cursor-progress" : "cursor-pointer"} ${
+              darkMode ? "bg-cardBg text-white" : "bg-cardBgLight text-tertiary"
             } py-3 px-8 outline-none w-fit font-bold shadow-md shadow-primary rounded-xl`}
           >
-            {loading ? 'Sending...' : 'Send'}
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </DynamicDiv>
@@ -188,4 +188,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, 'contact');
+export default SectionWrapper(Contact, "contact");

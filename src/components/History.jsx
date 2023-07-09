@@ -1,5 +1,5 @@
-import { SectionWrapper } from '../hoc';
-import Experience from './Experience';
+import { SectionWrapper } from "../hoc";
+import Experience from "./Experience";
 
 const History = () => {
   return (
@@ -10,4 +10,4 @@ const History = () => {
   );
 };
 
-export default SectionWrapper(History, 'work');
+export default SectionWrapper(History, "work");

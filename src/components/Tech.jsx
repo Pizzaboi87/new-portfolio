@@ -1,11 +1,13 @@
-import { useMemo } from "react";
-import { techLogos } from "../constants";
+import { useContext, useMemo } from "react";
 import { Icon } from "@iconify/react";
+import { DatabaseContext } from "../context";
 
 const Tech = () => {
+  const data = useContext(DatabaseContext);
+
   const memoizedIcons = useMemo(
     () =>
-      techLogos.map((logo, index) => (
+      data.techLogos.map((logo, index) => (
         <li
           className="md:text-5xl text-4xl text-center"
           style={{ width: "var(--logo-width)" }}

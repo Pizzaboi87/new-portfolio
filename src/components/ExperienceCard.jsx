@@ -1,5 +1,5 @@
-import { VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import { VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceCard = ({
   experience,
@@ -9,19 +9,19 @@ const ExperienceCard = ({
 }) => (
   <VerticalTimelineElement
     contentStyle={{
-      background: darkMode ? '#2c2744' : '#c2dae6',
-      color: darkMode ? '#ffffff' : '#000000',
+      background: darkMode ? "#2c2744" : "#c2dae6",
+      color: darkMode ? "#ffffff" : "#000000",
     }}
-    className={smallView ? '-mx-4' : null}
+    className={smallView ? "-mx-4" : null}
     contentArrowStyle={{
-      borderRight: `7px solid ${darkMode ? '#ff8d00' : '#58a9ff'}`,
+      borderRight: `7px solid ${darkMode ? "#ff8d00" : "#58a9ff"}`,
     }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
     icon={
       <div
         className={`${
-          darkMode ? 'border-color__dark' : 'border-color__light'
+          darkMode ? "border-color__dark" : "border-color__light"
         } flex justify-center items-center w-full h-full`}
       >
         <img
@@ -35,14 +35,14 @@ const ExperienceCard = ({
     <div>
       <h3
         className={`${
-          darkMode ? 'text-orange' : 'text-blue'
+          darkMode ? "text-orange" : "text-blue"
         } text-[24px] font-bold`}
       >
         {experience.title}
       </h3>
       <p
         className={`${
-          darkMode ? 'text-secondary' : 'text-secondaryLight'
+          darkMode ? "text-secondary" : "text-secondaryLight"
         } text-[16px] font-semibold`}
         style={{ margin: 0 }}
       >
@@ -55,7 +55,7 @@ const ExperienceCard = ({
           <li
             key={`experience-point-${index}`}
             className={`${
-              darkMode ? 'text-white' : 'text-black'
+              darkMode ? "text-white" : "text-black"
             } text-[14px] pl-1 tracking-wider`}
           >
             {point}

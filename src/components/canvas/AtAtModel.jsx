@@ -160,6 +160,6 @@ const AtAtModel = (props) => {
   );
 };
 
-useGLTF.preload("./portfolio-assets/atat/atat.glb");
+useGLTF.preload("./atat.glb");
 
 export default AtAtModel;

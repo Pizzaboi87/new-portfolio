@@ -71,7 +71,17 @@ const Hero = () => {
             : " justify-end pr-6 bottom-5"
         } absolute w-full flex`}
       >
-        <a className="cursor-pointer z-10" href="#about">
+        <a
+          className="cursor-pointer z-10 flex items-center justify-center"
+          href="#portfolio"
+        >
+          <button
+            className={`${
+              darkMode ? "text-orange" : "text-blue"
+            } text-[1.2rem] mt-4 mr-2 font-bold rounded-xl`}
+          >
+            Check my Works
+          </button>
           <div
             className={`${darkMode ? "border-orange" : "border-blue"} ${
               smallView ? "w-[9vw] h-[16vw]" : "w-[35px] h-[64px]"

@@ -25,24 +25,24 @@ const Contact = () => {
   });
 
   const swalColored = Swal.mixin({
-    customClass: darkMode ? "darkModal" : "lightModal"
-  })
+    customClass: darkMode ? "darkModal" : "lightModal",
+  });
 
   const successSwal = () => {
     swalColored.fire({
       icon: "success",
       title: "Thank you!",
       text: "Your message has been sent.",
-    });;
+    });
   };
 
   const errorSwal = (error) => {
-      swalColored.fire({
-        icon: "error",
-        title: "Something went wrong!",
-        text: error,
-      });
-  }
+    swalColored.fire({
+      icon: "error",
+      title: "Something went wrong!",
+      text: error,
+    });
+  };
 
   const valueCheck = (form) => {
     const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
@@ -80,7 +80,7 @@ const Contact = () => {
         setLoading(false);
         setForm({ name: "", email: "", message: "" });
       } catch (error) {
-        console.log(error.text);
+        console.log(error);
         errorSwal("Your message hasn't been sent,\nplease try again later.");
         setLoading(false);
       }

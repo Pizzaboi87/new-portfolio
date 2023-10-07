@@ -25,7 +25,7 @@ const MainPage = () => {
       <About />
       <Portfolio />
       <Tech />
-      <History />
+      {/*<History />*/}
       <Contact />
       <Footer />
     </div>

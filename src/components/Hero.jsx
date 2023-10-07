@@ -48,8 +48,8 @@ const Hero = () => {
               darkMode ? styles.heroSubText : styles.heroSubTextLight
             } mt-2`}
           >
-            I'm a junior front-end <br className="sm:block hidden" />
-            developer from Hungary.
+            I'm a Frontend Developer <br className="sm:block hidden" />
+            from Hungary.
           </p>
         </div>
       </div>

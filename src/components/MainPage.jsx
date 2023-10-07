@@ -23,9 +23,9 @@ const MainPage = () => {
       <Navbar />
       <Hero />
       <About />
+      <Portfolio />
       <History />
       <Tech />
-      <Portfolio />
       <Contact />
       <Footer />
     </div>

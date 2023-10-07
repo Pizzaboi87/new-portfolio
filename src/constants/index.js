@@ -244,7 +244,7 @@ const aboutSection = {
   sub: "Introduction",
   titleFirst: "About",
   titleSec: "Me",
-  text: "I am a self-taught front-end developer with growing experience in React development, who gained proficiency in JavaScript, TypeScript, React Native, Firebase, and currently learning C# and Unity Game Engine as well. I enjoy creating visually appealing, user-friendly, and responsive web pages and applications. My humility helps me stay open to learning, while passion ensures my enthusiasm and motivation. Effective communication is crucial for me to understand expectations, accept feedback and collaborate with others.",
+  text: "I am a Frontend Developer with growing experience in React development, who gained proficiency in JavaScript, TypeScript, React Native, Firebase, and currently learning C# and Unity Game Engine as well. I enjoy creating visually appealing, user-friendly, and responsive web pages and applications. My humility helps me stay open to learning, while passion ensures my enthusiasm and motivation. Effective communication is crucial for me to understand expectations, accept feedback and collaborate with others.",
 };
 
 const experienceSection = {

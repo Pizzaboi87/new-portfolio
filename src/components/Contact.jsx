@@ -1,6 +1,6 @@
 import SectionText from "./SectionText";
 import emailjs from "@emailjs/browser";
-import swal from "@sweetalert/with-react";
+import Swal from "sweetalert2";
 import { useState, useRef, useContext } from "react";
 import { useInView, motion } from "framer-motion";
 import { CanvasWrapper, BB8Model } from "./canvas";
@@ -24,17 +24,25 @@ const Contact = () => {
     message: "",
   });
 
+  const swalColored = Swal.mixin({
+    customClass: darkMode ? "darkModal" : "lightModal"
+  })
+
   const successSwal = () => {
-    swal("Thank you!", "Your message has been sent.", "success", {
-      className: darkMode ? "darkModal" : "lightModal",
-    });
+    swalColored.fire({
+      icon: "success",
+      title: "Thank you!",
+      text: "Your message has been sent.",
+    });;
   };
 
   const errorSwal = (error) => {
-    swal("Something went wrong.", `${error}`, "error", {
-      className: darkMode ? "darkModal" : "lightModal",
-    });
-  };
+      swalColored.fire({
+        icon: "error",
+        title: "Something went wrong!",
+        text: error,
+      });
+  }
 
   const valueCheck = (form) => {
     const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;

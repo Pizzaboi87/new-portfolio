@@ -24,8 +24,8 @@ const MainPage = () => {
       <Hero />
       <About />
       <Portfolio />
-      <History />
       <Tech />
+      <History />
       <Contact />
       <Footer />
     </div>

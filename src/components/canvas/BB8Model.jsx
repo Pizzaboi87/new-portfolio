@@ -15,7 +15,7 @@ import * as THREE from "three";
 const BB8Model = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "./portfolio-assets/bb8/bb8.glb"
+    "./bb8.glb"
   );
   const { actions } = useAnimations(animations, group);
 

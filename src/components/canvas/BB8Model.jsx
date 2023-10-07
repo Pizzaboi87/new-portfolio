@@ -106,6 +106,6 @@ const BB8Model = (props) => {
   );
 };
 
-useGLTF.preload("./bb8.glb");
+useGLTF.preload("./portfolio-assets/bb8/bb8.glb");
 
 export default BB8Model;
